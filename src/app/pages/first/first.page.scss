@@ -1,0 +1,33 @@
+ion-content{
+    --ion-background-color:#F7F7F7;
+}
+.imageDiv{
+	height: 70%;
+    background: #F7F7F7;
+    position: relative;
+    text-align: center;
+	top:135px
+}
+.oneButton{
+	--background: #F9475C !important;
+	--color:#ffffff !important;
+	--border-radius: 30px;
+	--padding:0px;
+	height:50px;
+	width:50%;
+	    margin-top: 50px;
+}
+.oneButton.activated{
+	--background: #F9475C !important;
+	padding:0px;
+}
+.divButtonClass{
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.buttonLastDiv{
+	height: 30%;
+    background: #EAEAEA;
+    position: relative;
+}

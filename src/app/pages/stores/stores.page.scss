@@ -1,0 +1,493 @@
+.headerToolbar{
+	--background: #ffffff;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:14px
+}
+.showAllDivCat{
+	height:0px
+}
+.showDivCat{
+	opacity:0;
+	transition:2s linear;
+}
+.largDiveSortAndFilter{
+   position: sticky;
+   top: 0;
+   background-color: #ffffff;
+   z-index: 10000;
+   border-top:2px solid #EAEAEA;
+}
+.countOfStores{
+	font-size: 15px;
+    color: #494949;
+	padding-top: 9px;
+}
+.gridDepartInformation{
+	padding-bottom: 0px;
+	padding-top:0px
+}
+.showAndFilter{
+	float:left;
+	border-left:1px solid #EAEAEA;
+	padding:7px 5px 0px 5px
+}
+.sortingFilter{
+	float:left;
+	padding:7px 5px 0px 5px
+}
+.catSlides{
+	width:140px;
+	height:140px;
+	margin-left:2px;
+	margin-right:2px
+}
+.catImage{
+	width:55px;
+	height:55px; 
+	margin:auto
+}
+.catLabel{
+	padding-top:0px;
+	font-size:13px;
+	color:#494949;
+}
+.catLabelCheck{
+	padding-top: 0px;
+    font-size: 13px;
+    color: #F9475C;
+}
+.catCard{
+	background-color:var(--ion-color-wight);
+	width:130px;
+	height:130px;
+	margin: 0px;
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+}
+.catDiv{
+	padding-top: 25px;
+	text-align:center;
+	width:100%;
+}
+.catDivskeleton{
+	padding-top: 25px;
+	text-align:center;
+	width:100%;
+}
+.catLabelskeleton{
+	padding-top:13px;
+	font-size:13px;
+	color:#494949;
+	padding-left:25px;
+	padding-right:25px
+}
+.slidesData{
+	width:auto;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px
+}
+.catCardSubCat{
+	background-color:var(--ion-color-wight);
+	width:130px;
+	height:48px;
+	margin: 0px;
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+}
+.subCatLabel{
+	padding-top: 17px;
+	font-size:14px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.textSkeletonSlider{
+	height:15px;
+	width: 90px;
+}
+.divSkeletonLarg{
+	padding-top:13px;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+.divButtonClass{
+	padding-top:10px;
+	padding-bottom:15px;
+	width: 300px;
+}
+.ragionButton{
+	 padding-right: 23px;
+    padding-bottom: 15px;
+    padding-left: 22px;
+    padding-top: 17px;
+    border-radius: 7px;
+    font-size: 16px;
+    color: #F9475C;
+    background: #FFFFFF;
+    width: max-content;
+	margin-right:15px;
+	margin-left:10px
+}
+.filterButton{
+	padding-right: 32px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-top: 17px;
+    border-radius: 7px;
+    font-size: 16px;
+    color: #F9475C;
+    background: #FFFFFF;
+    width: 100px;
+    text-align: center;
+}
+.storesImageDiv{
+	float:right;
+	padding-left:12px;
+}
+.storesImageDivTow{
+	padding:25px 25px 15px 25px;
+}
+.storesImage{
+	border-radius: 10px;
+    margin-right: 15px;
+    width: 80px;
+    height: 80px;
+    margin-top: 15px;
+}
+.storesName{
+    font-size: 14px;
+    color: #494949;
+    padding-right: 0px;
+    padding-top: 20px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	width: 40%;
+}
+.storesCatLabel{
+	font-size: 11px;
+    padding-top: 4px;
+    color: #BDBDBD;
+    text-align: right;
+    padding-right: 13px;
+    height: 18px;
+}
+.storesStarCatLabel{
+	font-size: 13px;
+    padding-top: 0px;
+    color: #818181;
+    text-align: right;
+    padding-right: 13px;
+    height: 18px;
+	position: absolute;
+    left: 0px;
+	top: 13px;
+}
+.star{
+	position:relative;
+	float:right;
+	width:25px;
+	height:15px;
+	margin-right:30px;
+	margin-left: 35px;
+}
+.starFore{
+	position:relative;
+	width:90px;
+	height:15px;
+	text-align: center;
+    display: inline-block;
+	left: 20px;
+}
+.starForeTow{
+	position:relative;
+	width:80px;
+	height:15px;
+	text-align: center;
+    display: inline-block;
+}
+.countRate{
+	position: absolute;
+    left: 8px;
+    top: 11px;
+    font-size: 12px;
+}
+.starcover{
+	display:flex;
+	float:right
+}
+.starBackRat{
+	background:#FFCB45; 
+	height:15px;
+	direction:ltr; 
+	position:absolute; 
+	right:0px
+}
+.starLabel{
+    font-size: 12px;
+    margin-top: 7px;
+    color: #FFCB45;
+}
+.storesSubCatLabel{
+	font-size: 11px;
+    padding-top: 4px;
+    color: #BDBDBD;
+    text-align: right;
+    padding-right: 5px;
+    height: 18px;
+}
+.favImage{
+	text-align:end;
+	float:left;
+	font-size:9px;
+	color:#BDBDBD
+}
+.oneLikeDisLike{
+	text-align:end;
+	float:left;
+	padding-left:5px;
+	padding-right:5px;
+	font-size:9px;
+	color:#BDBDBD
+}
+.tooLikeDisLike{
+	text-align:end;
+	font-size:9px;
+	color:#BDBDBD
+}
+.note{
+	float:right;
+	padding-top: 5px;
+	padding-right: 15px;
+	color:#BDBDBD;
+	font-size:12px;
+	padding-bottom:10px;
+}
+.time{
+	float:left;
+	padding-top:5px;
+	padding-left: 10px;
+	padding-bottom:5px;
+}
+.price{
+	font-size:11px;
+	color:#494949
+}
+.storesSkeletonimage{
+	width:80px;
+	height:80px;
+	border-radius:10px;
+}
+.storesImageSkeletonDiv{
+	float:right;
+	padding-left:12px;
+	padding-right:15PX;
+	padding-top:15px;
+}
+.storesSkeletonlabel{
+	height:12px;
+}
+.storesSkeletonlabelCat{
+	height:12px;
+	width:100px
+}
+.lockImage{
+	position: absolute;
+    left: 0px;
+    z-index: 100;
+    width: 25px;
+    top: 39px;
+    right: 42px;
+}
+.storesNameTow{
+    font-size: 13px;
+    color: #494949;
+    padding-right: 15px;
+    padding-top: 10px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	text-align:right;
+}
+.storesStarCatLabelTow{
+	font-size: 12px;
+    padding-top: 10px;
+    color: #818181;
+    text-align: right;
+    padding-right: 15px;
+}
+.starLabelTow{
+    font-size: 12px;
+    color: #FFCB45;
+}
+.storesSubCatLabelTow{
+	font-size: 10px;
+    padding-top: 0px;
+    color: #BDBDBD;
+    text-align: right;
+    padding-right: 25px;
+    height: 18px;
+}
+.storesCatLabelTow{
+	font-size: 10px;
+    padding-top: 8px;
+    color: #BDBDBD;
+    text-align: right;
+    padding-right: 15px;
+    height: 18px;
+}
+.timeTow{
+	float:left;
+	padding-left: 10px;
+	padding-bottom:5px;
+}
+.favImageTow{
+	text-align:end;
+	float:left;
+	font-size:9px;
+	color:#BDBDBD
+}
+.noteTow{
+	padding-top: 10px;
+	padding-right: 15px;
+	color:#BDBDBD;
+	font-size:12px;
+	text-align:right;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.storesSkeletonimageTow{
+	height:100px
+}
+.storesSkeletonlabelTow{
+	height:12px;
+	width:80%
+}
+.storesskeletonCatLabelTow{
+	font-size: 10px;
+    padding-top: 0px;
+    color: #BDBDBD;
+    text-align: right;
+    padding-right: 15px;
+    height: 18px;
+}
+.priceTow{
+	font-size:11px;
+	color:#494949;
+}
+.lockImageLarg{
+	position: absolute;
+    width: 13%;
+    padding-top: 40%;
+}
+.cardStore{
+	box-shadow:none;
+	background-color:#ffffff;
+	margin: 6px !important;
+}
+.priceDiv{
+	padding-right: 15px;
+	text-align:right; 
+	padding-bottom: 6px;
+    padding-top: 4px;
+}
+.storesSkolCatLabelTow{
+	font-size: 10px;
+    padding-top: 0px;
+    color: #BDBDBD;
+    text-align: right;
+    padding-right: 15px;
+    height: 18px;
+}
+.priceDivTow{
+	padding-right: 15px;
+	text-align:right; 
+	padding-bottom: 6px;
+    padding-top: 0px;
+}
+
+.divEmptyVal{
+    text-align: center;
+    padding-top: 60px;
+}
+.emptyFirstText{
+    font-size: 12px;
+    color:#F9475C;
+    padding-bottom: 5px;
+}
+.emptyLastText{
+    font-size: 14px;
+    color:#F9475C;
+}
+/*menu style*/
+.footerToolbar{
+--background: #ffffff;
+--border-width:0px;
+--padding-top:7px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#494949;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 13px !important;
+    margin-bottom: 9px;
+	font-weight: 600;
+}
+ion-badge{
+   --background: #F9475C;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 6px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/

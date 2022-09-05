@@ -1,0 +1,247 @@
+.headerToolbar{
+	--background: #ffffff;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:14px;
+}
+ion-item{
+	--background:var(--ion-color-inputFormColor);
+	background-color:#ffffff;
+   --ion-background-color:var(--ion-color-inputFormColor);
+   --inner-padding-start:0px;
+   border-radius:10px;
+   --border-radius:10px;
+   --padding-bottom:3px;
+}
+ion-input{
+		--placeholder-color:var(--ion-color-formPlaseHolderColor);
+	--placeholder-opacity:1;
+	--padding-top:18px;
+	color:var(--ion-color-formPlaseHolderColor);
+	font-size:15px;
+}
+.search{
+	width:27px;
+	height:27px
+}
+.searchForm{
+	padding:10px 15px 10px 15px;
+}
+.gridDepartInformation{
+	padding-bottom: 0px;
+	padding-top:0px
+}
+.oldPrice {
+	font-size:14px;
+    position: relative;
+    display: inline-block;
+    color:#494949;
+}
+.oldPrice::before {
+    content: '';
+    border-bottom: 1px solid #494949;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.realPrice{
+	padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #F9475C;
+}
+.divInfo{
+	background-color:#ffffff; 
+	padding:10px 10px 10px 10px;
+}
+.productTitle{
+	color: #494949;
+    font-size: 16px;
+    font-weight: bold;
+}
+.productDesc{
+	padding-top: 10px;
+    font-size: 14px;
+    color: #BDBDBD;
+    padding-right: 15px;
+	padding-left: 15px;
+}
+.cardItem{
+	--background:#ffffff !important;
+	--min-height: 25px !important;
+}
+ion-label{
+    margin: 0px;
+    font-size:13px !important;
+    color:#494949 !important;
+    padding-right: 15px;
+    margin-bottom: 7px;
+    padding-top: 4px;
+
+}
+ion-checkbox{
+	--background:#EAEAEA;
+	--background-checked:#EAEAEA;
+	--border-color:var(--ion-color-searchButton);
+	--border-color-checked:var(--ion-color-menueColor);
+    --border-width: 0px;
+    --size: 18px;
+    --checkmark-width:4px;
+	--checkmark-color:#F9475C;
+    margin: 0px;
+    --border-radius: 4px;
+}
+.titleSection{
+	padding: 13px 16px 10px 16px;
+    background: #BDBDBD;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 23px;
+	color:#494949;
+}
+.titleSectionTow{
+	padding: 13px 16px 10px 16px;
+    background: #BDBDBD;
+    font-size: 15px;
+    font-weight: bold;
+	margin-top: 23px;
+	color:#494949;
+}
+.boxSection{
+	background-color:#ffffff;
+	padding-top:12px
+}
+ion-radio{
+	--color-checked: #F9475C;
+    --color: red;
+    --border-width: 0px;
+    width: 22px;
+    height: 22px;
+    --inner-border-radius: 13px;
+    margin-inline-end: 3px !important;
+    margin: 0px !important;
+    border: 20px;
+    border-radius: 20px;
+    background: #EAEAEA;
+}
+.divLabeladdishions{
+	border-bottom: dotted;
+    width: 100%;
+	font-size: 14px !important;
+    color:#494949 !important;
+}
+.divLabelLabeladdishions{
+    position: absolute;
+    background: #ffffff;
+    font-size: 13px !important;
+    color: #494949 !important;
+    padding-right: 15px;
+    padding-left: 5px;
+    bottom: 6px;
+}
+.divLabelPriceaddishions{
+	position: absolute;
+    background: #ffffff;
+    top: 2px;
+    left: 12px;
+	padding-right: 5px;
+	color:#F9475C
+}
+.headerTestVal{
+	padding: 12px 10px 10px 10px;
+	border-bottom: 1px solid #EAEAEA;
+	color: #ffffff;
+	background: #F9475C;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	font-size: 13px;
+}
+.footerTestVal{
+	padding: 12px 10px 10px 10px;
+    color: #494949;
+    background: #ffffff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 12px;
+}
+.oneButton{
+	--background: #F9475C !important;
+	--color:#ffffff !important;
+	--border-radius: 30px;
+	--padding:0px;
+	height:50px;
+	min-width: 300px;
+	width: 75%;
+}
+.oneButton.activated{
+	--background: #F9475C !important;
+	padding:0px;
+	height:50px;
+	min-width: 300px;
+	width: 75%;
+}
+.divButtonClass{
+	text-align:center;
+	padding-top:17px;
+	padding-bottom:10px;
+	position: sticky;
+	top: 100%;
+}
+
+
+
+
+.footerToolbar{
+--background: #ffffff;
+--border-width:0px;
+--padding-top:7px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#494949;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 13px !important;
+    margin-bottom: 9px;
+	font-weight: 600;
+}
+ion-badge{
+    --background: #F9475C;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 6px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}

@@ -1,0 +1,451 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+  <ion-buttons slot="end">
+      <ion-menu-button style="color:#F9475C"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>الصفحة الرئيسية</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div style="padding-top:10px;">
+	<div style="padding-bottom:10px">
+        <form style="display: contents;" (ngSubmit)="searchAllValues()">
+            <ion-item lines="none">
+            	<ion-input [type]="text" [ngModelOptions]="{standalone: true}" #searchInput [(ngModel)]="searchValues" placeholder="ما الذي تبحث عنه"></ion-input><ion-img src="../../assets/imgs/search.png" (click)="searchAllValues()" class="search"></ion-img>
+            </ion-item>
+        	<button style="display: contents;" id="submit" ion-button type="submit" ></button>
+        </form>
+    </div>
+     <!--catHom    image must be 125*125-->
+    <div *ngIf="categoriesHome==1" style="padding-bottom:17px">
+        <ion-grid *ngIf="!categoriesHomeSkeleton">
+            <ion-row>
+                <ion-col class="textAlignStart" style="padding:0px" size="3" *ngFor="let items of returnCategoriesHomeArray">
+                  <div>
+                    <ion-card class="catHomeCard" (click)="functionStoresByHomeCat(items.id)">
+                        <div>
+                            <div class="catHomeLabel">{{items.title}}</div>
+                            <div class="catHomeDiv"><img src="{{items.image}}" class="catHomeImage"></div>
+                        </div>
+                    </ion-card>
+                </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+       <ion-grid *ngIf="categoriesHomeSkeleton">
+        <ion-row>
+            <ion-col class="textAlignStart" style="padding:0px" size="3" *ngFor="let items of returnCategoriesHomeArray">
+                <ion-card class="catHomeCard" (click)="functionStoresByHomeCat(items.id)">
+                    <div>
+                        <div class="catHomeLabel"><ion-skeleton-text animated class="skeletonTextHomeLabel textAlignCenter"></ion-skeleton-text></div>
+                        <div class="catHomeDiv" style="padding-top:0px; padding-bottom:15px"><ion-skeleton-text animated class="skeletonCatHomeImage"></ion-skeleton-text></div>
+                    </div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+     </ion-grid>
+    </div>
+       <!--catHom-->
+      <!--bannars image must be 1920 * 900-->
+    <div *ngIf="banners==1" style="padding-bottom:17px"> 
+        <div *ngIf="!bannersHomeSkeleton">
+            <ion-slides pager="false" autoPlay="true" loop="true" (ionSlidesDidLoad)="slidesBannersLoad()" (ionSlideDidChange)="slidesBannersLoad()"  #slidesBanners>
+                <ion-slide *ngFor="let items of returnBannersHomeArray" >
+                	<div><img src="{{items.image}}" class="bannersHomeImage"></div>
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <div *ngIf="bannersHomeSkeleton" style="padding-bottom:10px">
+        	<div><ion-img src="../../assets/imgs/loading4.gif" class="bannersHomeImageSkeleton"></ion-img> </div>
+        </div>
+    </div>
+    <!--bannars-->
+    <!--product and orders-->
+    <div style="padding-bottom:17px">
+         <ion-card class="catHomeCard" style="border-radius:10px" (click)="contactInformation()">
+            <div style="height:55px">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col (click)="functionEvalueation(1,2)" class="textAlignStart" style="padding:0px" size="6">
+                            <div style="margin-top:8px">
+                                <div style="float:right">
+                                    <img src="../../assets/imgs/Group887.png" style="width:29px">
+                                </div>
+                                <div class="poxProductOrdersTitle" style="margin-top:10px">
+                                    <span>المنتجات</span>
+                                </div>
+                            </div>
+                        </ion-col>
+                        <ion-col (click)="functionCategories()" class="textAlignEnd" style="padding:0px" size="6">
+                        	<div style="margin-top:10px">
+                                <div class="poxProductOrdersImageDiv">
+                                    <img src="../../assets/imgs/GroupRed.png" style="width:25px">
+                                </div>
+                                 <div class="poxProductOrdersCount" style="margin-top:0px">
+                                    <div style="padding:5px 8px 0px 8px">5000</div>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </ion-card>
+    </div>
+    <div style="padding-bottom:17px">
+         <ion-card class="catHomeCard" style="border-radius:10px" (click)="functionStoresByHomeCat(items.id)">
+            <div style="height:55px">
+                <ion-grid>
+                    <ion-row>
+                         <ion-col (click)="functionOffersInformation(1,1)" class="textAlignStart" style="padding:0px" size="6">
+                            <div style="margin-top:8px">
+                                <div style="padding-top:0px; float:right">
+                                    <img src="../../assets/imgs/Group888.png" style="width:25px">
+                                </div>
+                               <div class="poxProductOrdersTitle" style="margin-top:6px">
+                                    <span>الطلبات</span>
+                                </div>
+                            </div>
+                        </ion-col>
+                        <ion-col (click)="functionCategories()" class="textAlignEnd" style="padding:0px" size="6">
+                        	<div style="margin-top:10px">
+                                <div class="poxProductOrdersImageDiv">
+                                    <img src="../../assets/imgs/GroupRed.png" style="width:25px">
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </ion-card>
+    </div>
+     <!--product and orders-->
+    <!--ImportantProduct 150*150-->
+    <div *ngIf="productsHome==1" style="padding-bottom:17px">
+        <ion-slides *ngIf="!productsHomeSkeleton" #slidesStoresHome [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+            <ion-slide *ngFor="let items of returnProductsHomeArray" class="storesHomeProductSlides">
+                <ion-card class="storesHomeProductCard">
+                    <div>
+                        <div style="padding:25px" (click)="functionProductsInformation(items.id,items.storeId)"><img src="{{items.smallImageTow}}" class="specialContentProductImage"></div>
+                        <div style="border-top:1.7px solid #EAEAEA"></div>
+                        <div class="textHomeProduct" (click)="functionProductsInformation(items.id,items.storeId)">{{items.title}}</div>
+                        <div class="textHomeLabelProduct" *ngIf="items.offerPrice==0">{{items.price}} JOD</div>
+                        <div class="textHomeLabelProduct" *ngIf="items.offerPrice!=0">{{items.offerPrice}} JOD</div>
+                        <div class="rowClass" (click)="functionProductsInformation(items.id,items.storeId)"><img src="../../assets/imgs/GroupRed.png" style="width:23px"></div>
+                    </div>
+                </ion-card>
+            </ion-slide>
+        </ion-slides>  
+        <ion-slides *ngIf="productsHomeSkeleton" #slidesStoresHome [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+            <ion-slide *ngFor="let items of returnProductsHomeArray" class="storesHomeProductSlides">
+                <ion-card class="storesHomeProductCard">
+                   <div>
+                        <div><ion-skeleton-text animated class="skeletonlContentProductImage"></ion-skeleton-text></div>
+                        <div style="border-top:1.7px solid #EAEAEA"></div>
+                        <div class="skeletonTextHomeProduct"><ion-skeleton-text animated class="skeletonTextHomeProductLabel"></ion-skeleton-text></div>
+                        <div class="skeletonTextHomeLabelProduct"><ion-skeleton-text animated class="skeletonTextHomeProductPrice"></ion-skeleton-text></div>
+                    </div>
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+    </div>
+     <!--ImportantProduct-->
+     <!--cat 75*75-->     
+    <div *ngIf="categories==1" style="padding-bottom:17px">
+      <div style="height: 50px;">
+            <div style="float:right"> <div class="catHomeTitleLabel">التصنيفات</div></div>
+            <div style="float:left">
+                <div class="catHomeMoreLabel textAlignEnd" (click)="functionCategories()">
+                    <div class="titleCategoriesHome" (click)="functionCategories()">
+                        <div class="imageCategoriesHome">المزيد</div>
+                        <div style="padding-top: 8px;">
+                        	<img src="../../assets/imgs/arrowRed.png" style="width:15px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  style="padding-top:10px">
+             <ion-slides *ngIf="!categoriesSkeleton" #slidesCategoriesHomeOne [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                <ion-slide *ngFor="let items of returnCategoriesArray" class="categoriesHomeSlides">
+                    <div>
+                        <ion-card class="categoriesHomeCard" (click)="functionStoresByCat(items.id)">
+                            <div>
+                                <div class="categoriesHomeDiv"><img src="{{items.image}}" class="categoriesHomeImage"></div>
+                            </div>
+                        </ion-card>
+                        <div class="categoriesHomeLabel">{{items.title}}</div>
+                    </div>
+                </ion-slide>
+            </ion-slides>
+             <ion-slides *ngIf="categoriesSkeleton" #slidesCategoriesHomeOne [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                <ion-slide *ngFor="let items of returnCategoriesArray" class="categoriesHomeSlides">
+                    <div>
+                        <ion-card class="categoriesHomeCard">
+                            <div>
+                                <div class="categoriesHomeDivskeleton"><ion-skeleton-text animated class="skeletonCategoriesHome"></ion-skeleton-text></div>
+                            </div>
+                        </ion-card>
+                        <div class="categoriesHomeLabel"><ion-skeleton-text animated class="skeletonCategoriesHomeText"></ion-skeleton-text></div>
+                    </div>
+                </ion-slide>
+            </ion-slides>
+        </div>
+     </div>
+    <!--cat-->
+     <!--المتاجر الاولى  *ngIf="storesFore==1" -->
+     <div *ngIf="storesFore==1" style="padding-bottom:17px">
+          <div style="height: 50px;">
+                <div style="float:right"> 
+                	<div class="catHomeTitleLabel">المتاجر</div>
+                </div>
+                <div style="float:left">
+                    <div class="catHomeMoreLabel textAlignEnd" (click)="functionAllStores()">
+                        <div class="titleCategoriesHome" (click)="functionAllStores()">
+                            <div class="imageCategoriesHome">المزيد</div>
+                            <div style="padding-top: 8px;" >
+                                <img src="../../assets/imgs/arrowRed.png" style="width:15px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+            <ion-grid *ngIf="!storesForeSkeleton">
+                <ion-row>
+                    <ion-col class="textAlignStart" size="6" *ngFor="let items of returnStoresForeArray">
+                        <div class="forestoresHomeSlides" (click)="functionStoreInformation(items.id)">
+                            <ion-card class="foreStoreHomeCard">
+                                <div *ngIf="items.closeStore==1" style="text-align: center;padding-left: 15%;"><img src="../../assets/imgs/lock.png" class="lockImageLarg"></div>
+                                <div>
+                                	<div><img src="{{items.image}}" class="foreStoreImage"></div>
+                                </div>
+                                <div style="border-top:1.7px solid #EAEAEA"></div>
+                                <div>
+                                    <div class="foreStoretextHomeName">{{items.title}}</div>
+                                    <div class="foreStoretextHomeLabel">{{items.categorie}}</div>
+                                    <div class="foreStoretextHomeLabel">{{items.subCategories}}</div>
+                                    <div class="rowClass" style="padding-bottom:10px" (click)="functionStoreInformation(items.id)"><img src="../../assets/imgs/GroupRed.png" style="width:23px"></div>
+                                </div>
+                            </ion-card>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-grid *ngIf="storesForeSkeleton">
+                <ion-row>
+                    <ion-col class="textAlignStart" size="6" *ngFor="let items of returnStoresForeArray">
+                        <div class="forestoresHomeSlides">
+                            <ion-card class="foreStoreHomeCard">
+                                <div>
+                                    <div style="padding:25px"><ion-skeleton-text animated class="skeletonlForContentImage"></ion-skeleton-text></div>
+                                    <div style="border-top:1.7px solid #EAEAEA"></div>
+                                    <div class="textHomeLabel" style="padding-right:25px;padding-left:25px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                                    <div class="textHomeLabel" style="padding-right:25px;padding-left:25px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                                    <div class="textHomeLabel" style="padding-right:25px;padding-left:25px;padding-bottom:33px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                                </div>
+                            </ion-card>
+                    	</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            </div>
+     	</div>
+     <!--المتاجر الاولى-->    
+      <!--ImportantProductInStore-->
+     <div *ngIf="productsStoreHome==1" style="padding-bottom:10px;">
+     	 <div style="height: 30px;">
+                <div style="float:right"> <div class="catHomeTitleLabel">{{storeNameOfProSt}}</div></div>
+         </div>
+        <div>
+        <ion-grid *ngIf="!productsStoreHomeSkeleton">
+                <ion-row>
+                    <ion-col class="textAlignStart" size="6" *ngFor="let items of returnProductsStoreHomeArray">
+                        <div class="productInStoreSlides" (click)="functionProductsInformation(items.id,items.storeId)">
+                            <ion-card class="productInStoreCard">
+                                <div>
+                                	<div><img src="{{items.smallImageTow}}" class="productInStoreImage"></div>
+                                </div>
+                                <div style="border-top:1.7px solid #EAEAEA"></div>
+                                <div>
+                                    <div class="textHomeProduct" (click)="functionProductsInformation(items.id,items.storeId)">{{items.title}}</div>
+                                    <div class="textHomeLabelProduct" *ngIf="items.offerPrice==0">{{items.price}} JOD</div>
+                                    <div class="textHomeLabelProduct" *ngIf="items.offerPrice!=0">{{items.offerPrice}} JOD</div>
+                                    <div class="rowClass" style="padding-bottom:10px" (click)="functionProductsInformation(items.id,items.storeId)"><img src="../../assets/imgs/GroupRed.png" style="width:23px"></div>
+                                </div>
+                            </ion-card>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+             <ion-grid *ngIf="productsStoreHomeSkeleton">
+                <ion-row>
+                    <ion-col class="textAlignStart" size="6" *ngFor="let items of returnProductsStoreHomeArray">
+                        <div class="productInStoreSlides" (click)="functionProductsInformation(items.id,items.storeId)">
+                            <ion-card class="productInStoreCard">
+                                <div>
+                                    <div style="padding:25px"><ion-skeleton-text animated class="skeletonlForContentImage"></ion-skeleton-text></div>
+                                    <div style="border-top:1.7px solid #EAEAEA"></div>
+                                    <div class="textHomeLabel" style="padding-right:25px;padding-left:25px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                                    <div class="textHomeLabel" style="padding-right:25px;padding-left:25px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                                    <div class="textHomeLabel" style="padding-right:25px;padding-left:25px;padding-bottom:33px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                                </div>
+                            </ion-card>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+     </div>
+     <!--ImportantProductInStore--> 
+      <!--subCatSPE حلويات-->
+    <div *ngIf="subCatSpe==1" style="padding-bottom:17px">
+         <div style="height: 30px;">
+              <div style="float:right"> <div class="catHomeTitleLabel">{{catNameOfProSt}}</div></div>
+         </div>
+         <div>
+          <div *ngIf="!subCatSpeSkeleton">
+            <ion-slides #slidesStoresHome [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                <ion-slide *ngFor="let items of returnSubCatSpeArray" class="storesSubCatSlides">
+                    <ion-card class="storesSubCatCard" (click)="functionStoresByCatAnsSubCat(items.catId,items.id)">
+                        <div>
+                            <div ><img src="{{items.image}}" class="specialSubCatImage"></div>
+                        </div>
+                        <div style="border-top:1.7px solid #EAEAEA"></div>
+                        <div>
+                            <div class="storetextSubCatName">{{items.title}}</div>
+                        </div>
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+            </div>
+            <div *ngIf="subCatSpeSkeleton">
+                <ion-slides #slidesStoresHome [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                    <ion-slide *ngFor="let items of returnSubCatSpeArray" class="storesSubCatSlides">
+                        <ion-card class="storesSubCatCard">
+                           <div>
+                                <div style="padding:25px"><ion-skeleton-text animated class="skeletonlHomeContentImage"></ion-skeleton-text></div>
+                                <div style="border-top:1.7px solid #EAEAEA"></div>
+                                <div class="textHomeSubCatLabel" style="padding-right:25px;padding-left:25px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                            </div>
+                        </ion-card>
+                    </ion-slide>
+                </ion-slides>
+            </div>
+         </div>
+    </div>
+    <!--subCatSPE-->
+     <!--offers-->
+    <div *ngIf="offersHome==1" style="padding-bottom:17px">
+        <div style="height: 50px;">
+            <div style="float:right"> <div class="catHomeTitleLabel">العروض اليومية</div></div>
+            <div style="float:left">
+                <div class="catHomeMoreLabel textAlignEnd" (click)="functionAllOffers()">
+                    <div class="titleCategoriesHome" (click)="functionAllOffers()">
+                        <div class="imageCategoriesHome">المزيد</div>
+                        <div style="padding-top: 8px;" >
+                            <img src="../../assets/imgs/arrowRed.png" style="width:15px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  style="padding-top:10px" *ngIf="!offersHomeSkeleton">
+            <ion-slides pager="false" autoPlay="true" loop="true" (ionSlidesDidLoad)="slidesDidLoad()" (ionSlideDidChange)="slidesDidLoad()"  #slidesOffersHome>
+                <ion-slide *ngFor="let items of [1,2,3,4,5,6]" >
+                    <div class="offersHome" (click)="functionOffersInformation(items.id)">
+                        <div><img src="../../assets/imgs/sdf.jpg" class="offersHomeImage"></div>
+                        <div class="offersHomeContent">{{items}}</div>
+                    </div>
+                    <div *ngIf="items.type==1" (click)="functionOffersInformation(items.id)">
+                        <div><ion-img src={{items.image}} class="offersHomeImage"></ion-img> </div>
+                    </div>
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <div *ngIf="offersHomeSkeleton" style="padding-bottom:10px">
+        	<div><ion-img src="../../assets/imgs/loading4.gif" class="bannersHomeImageSkeleton"></ion-img> </div>
+        </div>
+    </div>
+    <!--offers-->
+    <!--spechal-->
+    <div *ngIf="storesHome==1"  style="padding-right:10px;padding-left:10px">
+        <div style="height: 50px;">
+            <div style="float:right"> <div class="catHomeTitleLabel">المتاجر</div></div>
+            <div style="float:left">
+                <div class="catHomeMoreLabel textAlignEnd" (click)="functionAllStores()">
+                    <div class="titleCategoriesHome" (click)="functionAllStores()">
+                        <div class="imageCategoriesHome">المزيد</div>
+                        <div style="padding-top: 8px;" >
+                            <img src="../../assets/imgs/arrowRed.png" style="width:15px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div *ngIf="!storesHomeSkeleton">
+                <ion-slides #slidesStoresHome [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                    <ion-slide *ngFor="let items of returnStoresHomeArray" class="storesHomeSlides">
+                        <ion-card class="storesHomeCard" (click)="functionStoreInformation(items.id)">
+                            <div *ngIf="items.closeStore==1"><img src="../../assets/imgs/lock.png" class="lockImageHome"></div>
+                            <div>
+                                <div ><img src="{{items.image}}" class="specialContentImage"></div>
+                            </div>
+                            <div style="border-top:1.7px solid #EAEAEA"></div>
+                            <div>
+                                <div class="storetextHomeName">{{items.title}}</div>
+                                <div class="storetextHomeLabel">{{items.categorie}}</div>
+                                <div class="storetextHomeLabelTow">{{items.subCategories}}</div>
+                            </div>
+                                <div class="rowClass" (click)="functionStoreInformation(items.id)"><img src="../../assets/imgs/GroupRed.png" style="width:23px"></div>
+                        </ion-card>
+                    </ion-slide>
+                </ion-slides>
+            </div>
+            <div *ngIf="storesHomeSkeleton">
+                <ion-slides #slidesStoresHome [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                    <ion-slide *ngFor="let items of returnStoresHomeArray" class="storesHomeSlides">
+                        <ion-card class="storesHomeCard">
+                           <div>
+                                <div style="padding:25px"><ion-skeleton-text animated class="skeletonlHomeContentImage"></ion-skeleton-text></div>
+                                <div style="border-top:1.7px solid #EAEAEA"></div>
+                                <div class="textHomeLabel" style="padding-right:25px;padding-left:25px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                                <div class="textHomeLabel" style="padding-right:25px;padding-left:25px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                                <div class="textHomeLabel" style="padding-right:25px;padding-left:25px;padding-bottom:33px"><ion-skeleton-text animated class="skeletonTextHomeLabel"></ion-skeleton-text></div>
+                            </div>
+                        </ion-card>
+                    </ion-slide>
+                </ion-slides>
+            </div>
+        </div>
+    </div>
+    <!--spechal-->
+</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+<ion-toolbar class="footerToolbar">
+	<div class="width100">
+        <div class="menueClass menueClassActive">
+        	<div><img src="../../assets/imgs/Group867.png" style="width:20px"></div>
+            <div class="labelClass">الرئيسية</div>
+        </div>
+           <div class="menueClass" (click)="functionAllStores()">
+        	<div><img src="../../assets/imgs/Group863.png" style="width:20px"></div>
+            <div class="labelClass">المتاجر</div>
+        </div>
+        <div class="menueClass" (click)="functionGoToShoppingcart()">
+        	<div><img src="../../assets/imgs/Group10.png" style="width:20px"></div>
+            <ion-badge slot="start" mode='ios'>{{productInShopingCart}}</ion-badge>
+            <div class="labelClass">سلة الشراء</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group865.png" style="width:23px"></div>
+            <div class="labelClass">المنتجات</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group866.png" style="width:21px"></div>
+            <div class="labelClass">قائمتي</div>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,178 @@
+.headerToolbar{
+	--background: #ffffff;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-start: 25px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-end:5px;
+	--padding-start:5px;
+	--padding-bottom:14px
+}
+.slideNextDiv{
+	position:fixed;
+	left:4px;
+	font-size:25px;
+	z-index:2;
+	height: 30px;
+	top: 45%;	
+}
+.slideNexBacktIcon{
+	height: 100%;
+    width: 33px;
+    background-color: #ffffffe0;
+    color: #F9475C;
+    padding: 12px;
+    border-radius: 50px;
+}
+.slideNextPrev{
+	position:fixed;
+	right:4px;
+	font-size:25px;
+	z-index:2;
+	height: 30px;
+	top: 45%;
+}
+.cardStore{
+    box-shadow: none;
+    background-color: #ffffff;
+    margin: 0px !important;
+    height: 40px;
+	width:100%
+}
+.gridBranchesInformation{
+	padding:0px;
+}
+.storeName{
+	font-size: 15px;
+    color: #494949;
+	padding: 13px 10px 0px 10px;
+	border-bottom-right-radius:5px;
+	border-top-right-radius:5px;
+}
+.orderNumber{
+	font-size: 11px;
+    color: #F9475C;
+	padding: 15px 10px 0px 10px;
+	border-bottom-left-radius:5px;
+	border-top-left-radius:5px;
+}
+.cardStoreProduct{
+	box-shadow:none;
+	background-color:#ffffff;
+	margin: 6px !important;
+}
+.storesImageDiv{
+	float:right;
+	padding-left:12px;
+}
+.storesImage{
+	border-radius: 10px;
+    margin-right: 15px;
+    width: 80px;
+    height: 80px;
+    margin-top: 15px;
+}
+.storesName{
+    font-size: 14px;
+    color: #494949;
+    padding-right: 0px;
+    padding-top: 20px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	width: 40%;
+}
+.storesCatLabel{
+	font-size: 11px;
+    padding-top: 4px;
+    color: #BDBDBD;
+    text-align: right;
+    padding-right: 13px;
+    height: 18px;
+}
+.storesStarCatLabel{
+    font-size: 16px;
+    padding-top: 0px;
+    color: #818181;
+    text-align: right;
+    height: 18px;
+    position: absolute;
+    left: 21px;
+    top: 36px;
+}
+.time{
+    float: right;
+    padding-top: 13px;
+    padding-right: 14px;
+    padding-bottom: 10px;
+}
+.price{
+	font-size:11px;
+	color:#494949
+}
+.deleteIcon{
+    float: left;
+    padding-top: 10px;
+    padding-left: 14px;
+}
+.coverValues{
+	border: 2px solid;
+    padding: 8px 10px 2px 10px;
+    border-radius: 18px;
+}
+/*menu style*/
+.footerToolbar{
+--background: #ffffff;
+--border-width:0px;
+--padding-top:7px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#494949;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 13px !important;
+    margin-bottom: 9px;
+	font-weight: 600;
+}
+ion-badge{
+    --background: #F9475C;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 6px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/
+
+

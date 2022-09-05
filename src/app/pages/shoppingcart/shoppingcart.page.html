@@ -1,0 +1,93 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+  <ion-buttons slot="end">
+      <ion-menu-button style="color:#F9475C"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>سلة الشراء</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div style="padding-top:10px;">
+
+<div class="divEmptyVal">
+    <div class="slideNextDiv" (click)="slideNext()">
+        <ion-icon name="chevron-back-outline" class="slideNexBacktIcon"></ion-icon>
+    </div>
+    <div class="slideNextPrev" (click)="slidePrev()">
+        <ion-icon name="chevron-forward-outline" class="slideNexBacktIcon"></ion-icon>
+    </div>
+    <div>
+       <ion-slides pager="false" autoPlay="true" loop="true" #slides>
+            <ion-slide *ngFor="let items of [1,2,3,4,5,6,7,8];let i = index" >
+                    <ion-grid class="gridBranchesInformation">
+                        <ion-row>
+                            <ion-col class="textAlignStart" style="padding:0px" size="7">
+                                <div class="storeName cardStore">إسم المتجر</div>
+                            </ion-col>
+                            <ion-col class="textAlignEnd" style="padding:0px" size="5">
+                                <div class="orderNumber cardStore">رقم الطلب : 12345685</div>
+                            </ion-col>
+                        </ion-row>
+                         <ion-row *ngFor="let items of [1,2,3,4,5,6,7,8];let i = index">
+                            <ion-col class="textAlignStart" style="padding:0px" size="12">
+                                <ion-card class="cardStoreProduct"  >
+                                    <div class="storesImageDiv" (click)="functionStoreInformation(items.id)">
+                                        <img src="../../assets/imgs/forestore.jpg" class="storesImage">
+                                    </div>
+                                    <div (click)="functionStoreInformation(items.id)">
+                                        <div style="height:110px"> 
+                                            <div class="storesName" (click)="functionStoreInformation(items.id)">إسم المنتج</div>
+                                            <div class="storesStarCatLabel" >
+                                               <div class="coverValues"><span style="padding-left:8px;font-size: 17px;">+</span> 50 <span style="padding-right:8px;font-size: 17px;">-</span></div>
+                                            </div>
+                                            <div class="storesCatLabel" (click)="functionStoreInformation(items.id)">إسم المنتج</div>
+                                        </div>
+                                    </div>
+                                    <div style="border-top:1px solid #EAEAEA;"></div>
+                                    <div class="time" (click)="functionStoreInformation(items.id)">
+                                        <div class="price">50 دقيقة / 3.5 JOD</div>
+                                    </div>
+                                     <div class="deleteIcon" (click)="functionDeletePro(itemsProducts.id,i,j,itemsProducts.type)">
+                                        <div><img src="../../assets/imgs/delete.png" style="width:20px; height:20px;"></div>
+                                    </div>
+                                </ion-card>
+                            </ion-col>
+                        </ion-row>
+                     </ion-grid>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</div>
+</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+<ion-toolbar class="footerToolbar">
+	<div class="width100">
+        <div class="menueClass menueClassActive">
+        	<div><img src="../../assets/imgs/Group867.png" style="width:20px"></div>
+            <div class="labelClass">الرئيسية</div>
+        </div>
+           <div class="menueClass" (click)="functionAllStores()">
+        	<div><img src="../../assets/imgs/Group863.png" style="width:20px"></div>
+            <div class="labelClass">المتاجر</div>
+        </div>
+        <div class="menueClass menueClassActive">
+        	<div><img src="../../assets/imgs/Group11.png" style="width:20px"></div>
+            <ion-badge slot="start" mode='ios'>{{productInShopingCart}}</ion-badge>
+            <div class="labelClass">سلة الشراء</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group865.png" style="width:23px"></div>
+            <div class="labelClass">المنتجات</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group866.png" style="width:21px"></div>
+            <div class="labelClass">قائمتي</div>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-footer>
+
+
+
+

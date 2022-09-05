@@ -1,0 +1,238 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+  	<ion-buttons slot="end">
+      <ion-menu-button style="color:#F9475C"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>المتاجر</ion-title>
+    <ion-buttons slot="start">
+      <img src="../../assets/imgs/searchVal.png" style="width:27px; height:27px;"/>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content> 
+<div class="largDiveSortAndFilter">
+    <ion-grid class="gridDepartInformation">
+        <ion-row>
+            <ion-col class="textAlignStart textDepartInformation" style="direction:rtl" size="6">
+            	<div class="countOfStores">عدد المتاجر : {{countOfAllValues}}</div>
+            </ion-col>
+            <ion-col class="textAlignEnd gridDepartInformation" style="direction:rtl" size="6">
+                <div class="sortingFilter" (click)="changeTypeShow(1)" *ngIf="typeShow == 2"><img src="../../assets/imgs/Group878.png" style="width:27px; height:27px;"></div>
+                <div class="sortingFilter" (click)="changeTypeShow(1)" *ngIf="typeShow == 1"><img src="../../assets/imgs/Group882.png" style="width:27px; height:27px;"></div>
+                <div class="showAndFilter" (click)="changeTypeShow(2)" *ngIf="typeShow == 1"><img src="../../assets/imgs/Group877.png" style="width:27px; height:27px;"></div>
+                <div class="showAndFilter" (click)="changeTypeShow(2)" *ngIf="typeShow == 2"><img src="../../assets/imgs/Group881.png" style="width:27px; height:27px;"></div>
+                <div class="showAndFilter" (click)="functionShowFilterInfo(selectedTypaOfOperationFilter)" *ngIf="selectedTypaOfOperationFilter == 0"><img src="../../assets/imgs/Group876.png" style="width:27px; height:27px;"></div>
+            	<div class="showAndFilter" (click)="functionShowFilterInfo(selectedTypaOfOperationFilter)" *ngIf="selectedTypaOfOperationFilter == 1"><img src="../../assets/imgs/Group880.png" style="width:27px; height:27px;"></div>
+                <div class="showAndFilter" (click)="functionSortAndFilter('allStoresSorting',lastAllStoresSortSelect,regionsStoreSelected)"><img src="../../assets/imgs/Group875.png" style="width:27px; height:27px;"></div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>
+  <ion-refresher slot="fixed" (ionRefresh)="refrechAllPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+	<div class="showAllDivCat" #showAllDivCat>
+        <div class="showDivCat" #showDivCat>
+         <div style="padding:10px">
+            <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                <ion-slide #slidesCatHome *ngFor="let items of returnCategoriesArray;let i = index" class="catSlides">
+                    <ion-card class="catCard" (click)="functionGetSubCatAndSelectCat(items.id,i,items.operation)">
+                        <div *ngIf="!categoriesSkeleton">
+                            <div class="catDiv"><img src="{{items.image}}" class="catImage"></div>
+                            <div class="{{items.checked}}">{{items.title}}</div>
+                        </div>
+                        <div *ngIf="categoriesSkeleton">
+                            <div class="catDivskeleton"><ion-skeleton-text animated class="catImage"></ion-skeleton-text></div>
+                            <div class="catLabelskeleton"><ion-skeleton-text animated class="skeletonTextLabel textAlignCenter"></ion-skeleton-text></div>
+                        </div>
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+        </div>
+         <div style="padding-bottom:10px" *ngIf="categories == 1">
+            <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                <ion-slide #slidesCatHome *ngFor="let items of returnSubCategoriesArray;let i = index"  class="slidesData">
+                	 <ion-card class="catCardSubCat">
+                        <div *ngIf="!subCategoriesSkeleton">
+                            <div class="{{items.checked}} subCatLabel" (click)="functionSelectSubCat(items.id,i,items.operation)">{{items.title}}</div>
+                        </div>
+                        <div *ngIf="subCategoriesSkeleton" class="divSkeletonLarg"><ion-skeleton-text animated class="textSkeletonSlider"></ion-skeleton-text></div>
+                    </ion-card>
+                
+               </ion-slide>
+            </ion-slides>
+        </div>
+            <div class="divButtonClass" style="padding-top:15px">
+                <span class="ragionButton" (click)="functionSortAndFilterRegion('allStores',lastAllStoresSortSelect,regionsStoreSelected)"> {{regionCount}} </span>
+                <span class="filterButton" (click)="functionFeachDataFromServer(1)"> فلترة </span>
+            </div>
+        </div>
+    </div>
+  	<div style="padding-right:3px; padding-left:3px">
+    <div *ngIf="stores!=0">
+    	<div *ngIf="typeShow == 1">
+            <div style="position: relative;padding-left:5px; padding-right:5px" *ngFor="let items of returnAllStoresArray;let i = index">
+                <ion-card class="cardStore" style="border-radius:10px" *ngIf="!storesStoreSkeleton">
+                    <div *ngIf="items.closeStore==1"><img src="../../assets/imgs/lock.png" class="lockImage"></div>
+                    <div class="storesImageDiv" (click)="functionStoreInformation(items.id)">
+                        <img src="{{items.image}}" class="storesImage">
+                    </div>
+                    <div (click)="functionStoreInformation(items.id)">
+                        <div style="height:110px"> 
+                            <div class="storesName" (click)="functionStoreInformation(items.id)">{{items.title}}</div>
+                            <div class="storesStarCatLabel" >
+                                <div class="starLabel">
+                                    <div class="starFore">
+                                      <div class="starBackRat" [ngStyle]="{'width': items.rate}">
+                                         <div class="starcover">
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                         </div>
+                                      </div>
+                                    </div>
+                                    <div class="countRate">({{items.countRate}})</div>
+                                </div>
+                            </div>
+                            <div class="storesCatLabel" (click)="functionStoreInformation(items.id)">{{items.catName}} / {{items.subCatName}}</div>
+                        </div>
+                    </div>
+                    <div style="border-top:1px solid #EAEAEA;"></div>
+                    <div>
+                        <div class="note" *ngIf="items.storeNote!=0" (click)="functionStoreInformation(items.id)">{{items.storeNote}}</div>
+                         <div class="note" *ngIf="items.storeNote==0"></div>
+                        <div class="time" (click)="functionStoreInformation(items.id)">
+                            <div class="price">{{items.deliveryTime}} / {{items.deliveryPrices}} JOD</div>
+                        </div>
+                    </div>
+                </ion-card>
+                 <ion-card class="cardStore"  style="border-radius:10px" *ngIf="storesStoreSkeleton">
+                    <div class="storesImageSkeletonDiv">
+                        <ion-skeleton-text animated class="storesSkeletonimage"></ion-skeleton-text>
+                    </div>
+                    <div style="height:110px">
+                        <div>
+                            <div class="storesName"><ion-skeleton-text animated class="storesSkeletonlabel"></ion-skeleton-text></div>
+                            <div class="storesCatLabel" style="padding-right:105px"><ion-skeleton-text animated class="storesSkeletonlabelCat"></ion-skeleton-text></div>
+                        </div>
+                    </div>
+                    <div style="border-top:1px solid #EAEAEA;"></div>
+                    <div>
+                        <div class="note"><ion-skeleton-text animated class="storesSkeletonlabelCat"></ion-skeleton-text></div>
+                        <div class="time">
+                            <div class="price"><ion-skeleton-text animated class="storesSkeletonlabelCat"></ion-skeleton-text></div>
+                        </div>
+                    </div>
+                </ion-card>
+         	</div>
+        </div>
+         <div *ngIf="typeShow == 2">
+            <ion-grid class="gridStoresInformation">
+                 <ion-row style="padding:0px"  *ngIf="!storesStoreSkeleton">
+                    <ion-col style="padding:0px" class="textAlignCenter" size="6" *ngFor="let items of returnAllStoresArray;let i = index">
+                    	<ion-card class="cardStore" style="border-radius:10px;padding:0px">
+                        <div *ngIf="items.closeStore==1" style="text-align: center;padding-left: 13%;"><img src="../../assets/imgs/lock.png" class="lockImageLarg"></div>
+                        	<div class="storesImageDivTow" (click)="functionStoreInformation(items.id)">
+                                 <img src="{{items.image}}">
+                            </div>
+                            <div style="border-top:1px solid #EAEAEA;"></div>
+                            <div class="storesNameTow" (click)="functionStoreInformation(items.id)">{{items.title}}</div>
+                            <div class="storesCatLabelTow" (click)="functionStoreInformation(items.id)">{{items.catName}} / {{items.subCatName}}</div>
+                            <div class="storesStarCatLabelTow" >
+                                <div class="starLabelTow">
+                                    <div class="starForeTow">
+                                      <div class="starBackRat" [ngStyle]="{'width': items.rate}">
+                                         <div class="starcover">
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                         </div>
+                                      </div>
+                                    </div>
+                                    <span style="vertical-align:top;padding-top:13px">({{items.countRate}})</span>
+                                </div>
+                            </div>
+                            <div class="priceDiv" (click)="functionStoreInformation(items.id)">
+                              	<div class="price">{{items.deliveryTime}} / {{items.deliveryPrices}} JOD</div>
+                            </div>
+                            <div style="border-top:1px solid #EAEAEA;"></div>
+                            <div  *ngIf="items.storeNote!=0" class="noteTow"  (click)="functionStoreInformation(items.id)">{{items.storeNote}}</div>
+                            <div  *ngIf="items.storeNote==0" class="noteTow">&nbsp;</div>
+                            <div style="height:15px"></div>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row style="padding:0px" *ngIf="storesStoreSkeleton">
+                    <ion-col  style="padding:0px" class="textAlignCenter" size="6" *ngFor="let items of returnAllStoresArray;let i = index">
+                    	<ion-card  class="cardStore" style="border-radius:10px;padding:0px">
+                        	<div class="storesImageDivTow">
+                                 <ion-skeleton-text animated class="storesSkeletonimageTow"></ion-skeleton-text>
+                            </div>
+                            <div style="border-top:1px solid #EAEAEA;"></div>
+                            <div class="storesNameTow"><ion-skeleton-text animated class="storesSkeletonlabelTow"></ion-skeleton-text></div>
+                            <div class="storesSkolCatLabelTow"><ion-skeleton-text animated class="storesSkeletonlabelCat"></ion-skeleton-text></div>
+                            <div class="storesskeletonCatLabelTow" >
+                                <ion-skeleton-text animated class="storesSkeletonlabelCat" style="padding-top:3px"></ion-skeleton-text>
+                            </div>
+                            <div class="priceDivTow" (click)="functionStoreInformation(items.id)">
+                                   <div class="priceTow"><ion-skeleton-text animated class="storesSkeletonlabelCat"></ion-skeleton-text></div>
+                            </div>
+                            <div *ngIf="items.storeNote!=0" style="border-top:1px solid #EAEAEA;"></div>
+                            <div class="noteTow" *ngIf="items.storeNote!=0">
+                            	<ion-skeleton-text animated class="storesSkeletonlabelCat"></ion-skeleton-text>
+                            </div>
+                            <div *ngIf="items.storeNote!=0"  style="height:15px"></div>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+    <div *ngIf="stores==0" class="divEmptyVal">
+        	<div>
+                <img src="../../assets/imgs/noStores.png" style="width:150px; height:150px">
+            </div>
+            <div class="emptyFirstText">
+                عذرا! لا يوجد متاجر حاليا
+            </div>
+            <div class="emptyLastText">
+                لم يتم إضافة اي بيانات على هذه الشاشة حاليا
+            </div>
+        </div>
+  	</div>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+        <ion-infinite-scroll-content loadingSpinner="lines" loadingText="يتم سحب البيانات....">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+<ion-footer class="ion-no-border">
+<ion-toolbar class="footerToolbar">
+	<div class="width100">
+        <div class="menueClass" (click)="functionGoToHome()">
+        	<div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+            <div class="labelClass">الرئيسية</div>
+        </div>
+           <div class="menueClass menueClassActive">
+        	<div><img src="../../assets/imgs/Group868.png" style="width:20px"></div>
+            <div class="labelClass">المتاجر</div>
+        </div>
+        <div class="menueClass" (click)="functionGoToShoppingcart()">
+        	<div><img src="../../assets/imgs/Group10.png" style="width:20px"></div>
+            <ion-badge slot="start" mode='ios'>{{productInShopingCart}}</ion-badge>
+            <div class="labelClass">سلة الشراء</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group865.png" style="width:23px"></div>
+            <div class="labelClass">المنتجات</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group866.png" style="width:21px"></div>
+            <div class="labelClass">قائمتي</div>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,90 @@
+<ion-content>
+    <div (click)="closeModel()">
+   		<ion-icon name="close" style="font-size:40px"></ion-icon>
+    </div>
+    <div class="contentDiv">
+        <div class="subContentDiv">
+        	<div>
+             <div class="backGroundBox boxTitle">شكرا لإعطائنا دقيقة من وقتك</div>
+             <div class="backGroundBox boxSubTitle">لتقييم الطلب رقم {{ordrNumber}}</div>
+                <div class="backGroundBox">
+                <ion-item lines="none">
+                   <div class="titleRate">الطلب نفسه : </div>
+                     <div class="starClass">
+                        <div class="star" >
+                          <div class="starBack">
+                             <div class="starcover">
+                              <img #val51 src="assets/imgs/starRate.png" (click)="functionNumRateStore(5,1)" class="imageRate"/>
+                              <img #val41 src="assets/imgs/starRate.png" (click)="functionNumRateStore(4,1)" class="imageRate"/>
+                              <img #val31 src="assets/imgs/starRate.png" (click)="functionNumRateStore(3,1)" class="imageRate"/>
+                              <img #val21 src="assets/imgs/starRate.png" (click)="functionNumRateStore(2,1)" class="imageRate"/>
+                              <img #val11 src="assets/imgs/starRate.png" (click)="functionNumRateStore(1,1)" class="imageRate"/>
+                             </div>
+                          </div>
+                        </div>
+                    </div>
+                    </ion-item>	 
+                </div>
+                <div class="backGroundBox">
+                <ion-item lines="none">
+                   <div class="titleRate">التوصيل : </div>
+                     <div class="starClass">
+                        <div class="star" >
+                          <div class="starBack">
+                             <div class="starcover">
+                              <img #val52 src="assets/imgs/starRate.png" (click)="functionNumRateStore(5,2)" class="imageRate"/>
+                              <img #val42 src="assets/imgs/starRate.png" (click)="functionNumRateStore(4,2)" class="imageRate"/>
+                              <img #val32 src="assets/imgs/starRate.png" (click)="functionNumRateStore(3,2)" class="imageRate"/>
+                              <img #val22 src="assets/imgs/starRate.png" (click)="functionNumRateStore(2,2)" class="imageRate"/>
+                              <img #val12 src="assets/imgs/starRate.png" (click)="functionNumRateStore(1,2)" class="imageRate"/>
+                             </div>
+                          </div>
+                        </div>
+                    </div>
+                    </ion-item>	 
+                </div>
+                <div class="backGroundBox">
+                <ion-item lines="none">
+                   <div class="titleRate">حالة الطلب : </div>
+                     <div class="starClass">
+                        <div class="star" >
+                          <div class="starBack">
+                             <div class="starcover">
+                              <img #val53 src="assets/imgs/starRate.png" (click)="functionNumRateStore(5,3)" class="imageRate"/>
+                              <img #val43 src="assets/imgs/starRate.png" (click)="functionNumRateStore(4,3)" class="imageRate"/>
+                              <img #val33 src="assets/imgs/starRate.png" (click)="functionNumRateStore(3,3)" class="imageRate"/>
+                              <img #val23 src="assets/imgs/starRate.png" (click)="functionNumRateStore(2,3)" class="imageRate"/>
+                              <img #val13 src="assets/imgs/starRate.png" (click)="functionNumRateStore(1,3)" class="imageRate"/>
+                             </div>
+                          </div>
+                        </div>
+                    </div>
+                    </ion-item>	 
+                </div>
+                <div class="backGroundBox">
+                <ion-item lines="none">
+                   <div class="titleRate">سعر التوصيل : </div>
+                     <div class="starClass">
+                        <div class="star" >
+                          <div class="starBack">
+                             <div class="starcover">
+                              <img #val54 src="assets/imgs/starRate.png" (click)="functionNumRateStore(5,4)" class="imageRate"/>
+                              <img #val44 src="assets/imgs/starRate.png" (click)="functionNumRateStore(4,4)" class="imageRate"/>
+                              <img #val34 src="assets/imgs/starRate.png" (click)="functionNumRateStore(3,4)" class="imageRate"/>
+                              <img #val24 src="assets/imgs/starRate.png" (click)="functionNumRateStore(2,4)" class="imageRate"/>
+                              <img #val14 src="assets/imgs/starRate.png" (click)="functionNumRateStore(1,4)" class="imageRate"/>
+                             </div>
+                          </div>
+                        </div>
+                    </div>
+                    </ion-item>	 
+                </div>
+                 <div>
+                  <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize14" id="submit" (click)="saveAndBack()"><span style="font-size:13px;padding-top:4px">تقييم</span></ion-button>
+                  </div>
+                </div>
+              </div>
+       </div> 
+    </div>
+</ion-content>

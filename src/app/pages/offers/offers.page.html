@@ -1,0 +1,152 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar no-border class="headerToolbar">
+  	<ion-buttons slot="end">
+      <img (click)="backToStores()" src="../../assets/imgs/back.png" style="width:27px; height:27px;margin-left:10px"/>
+    </ion-buttons>
+    <ion-title>العروض اليومية</ion-title>
+    <ion-buttons slot="start">
+      <img src="../../assets/imgs/searchVal.png" style="width:27px; height:27px;"/>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+	<div class="searchForm">
+        <form style="display: contents;" (ngSubmit)="searchAllValues()">
+            <ion-item lines="none">
+            	<ion-input [type]="text" [ngModelOptions]="{standalone: true}" #searchInput [(ngModel)]="searchValues" placeholder="ما الذي تبحث عنه"></ion-input><ion-img src="../../assets/imgs/search.png" (click)="searchAllValues()" class="search"></ion-img>
+            </ion-item>
+        	<button style="display: contents;" id="submit" ion-button type="submit" ></button>
+        </form>
+    </div> 
+    
+  <div class="largDiveSortAndFilter">
+    <ion-grid class="gridDepartInformation">
+        <ion-row>
+            <ion-col class="textAlignStart textDepartInformation" style="direction:rtl" size="6">
+            	<div class="countOfStores">عدد العروض : {{countOfAllValues}}</div>
+            </ion-col>
+            <ion-col class="textAlignEnd gridDepartInformation" style="direction:rtl" size="6">
+                <div class="showAndFilter" (click)="functionShowFilterInfo(selectedTypaOfOperationFilter)" *ngIf="selectedTypaOfOperationFilter == 0"><img src="../../assets/imgs/Group876.png" style="width:27px; height:27px;"></div>
+            	<div class="showAndFilter" (click)="functionShowFilterInfo(selectedTypaOfOperationFilter)" *ngIf="selectedTypaOfOperationFilter == 1"><img src="../../assets/imgs/Group880.png" style="width:27px; height:27px;"></div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>
+  <ion-refresher slot="fixed" (ionRefresh)="refrechAllPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  	<div class="showAllDivCat" #showAllDivCat>
+        <div class="showDivCat" #showDivCat>
+         <div style="padding:10px">
+            <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                <ion-slide #slidesCatHome *ngFor="let items of returnCategoriesArray;let i = index" class="catSlides"><!------returnCategoriesArray----->
+                    <ion-card class="catCard" (click)="functionGetSubCatAndSelectCat(items.id,i,items.operation)">
+                        <div *ngIf="!categoriesSkeleton">
+                            <div class="catDiv"><img src="{{items.image}}" class="catImage"></div><!------{{items.image}}----->
+                            <div class="{{items.checked}}">{{items.title}}</div><!------{{items.title}}----->
+                        </div>
+                        <div *ngIf="categoriesSkeleton">
+                            <div class="catDivskeleton"><ion-skeleton-text animated class="catImage"></ion-skeleton-text></div>
+                            <div class="catLabelskeleton"><ion-skeleton-text animated class="skeletonTextLabel textAlignCenter"></ion-skeleton-text></div>
+                        </div>
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+        </div>
+         <div *ngIf="categories == 1">
+            <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                <ion-slide #slidesCatHome *ngFor="let items of returnSubCategoriesArray;let i = index"  class="slidesData"><!------returnSubCategoriesArray----->
+                	 <ion-card class="catCardSubCat">
+                        <div *ngIf="!subCategoriesSkeleton">
+                            <div class="{{items.checked}} subCatLabel" (click)="functionSelectSubCat(items.id,i,items.operation)">{{items.title}}</div><!------{{items.title}}----->
+                        </div>
+                        <div *ngIf="subCategoriesSkeleton" class="divSkeletonLarg"><ion-skeleton-text animated class="textSkeletonSlider"></ion-skeleton-text></div>
+                    </ion-card>
+                
+               </ion-slide>
+            </ion-slides>
+        </div>
+        </div>
+    </div>
+        <div *ngIf="offers!=0"><!-----*ngIf="offers!=0"------>
+            <div *ngIf="!offersSkeleton"><!------*ngIf="!offersSkeleton"----->
+                <div class="padding5" *ngFor="let items of returnAllOffersArray"><!----returnAllOffersArray------->
+                 <div class="offersDiv" *ngIf="items.type!=1" (click)="functionOffersInformation(items.id)">
+                    <div class="radu"><img src="{{items.image}}" class="offersImage"></div><!-----{{items.image}}------>
+                    <div class="offersContent">{{items.description}}</div><!----------->
+                </div>
+                <div (click)="functionOffersInformation(items.id)" *ngIf="items.type==1"><!-----*ngIf="items.type==1"------>
+                    <div class="radu"><img src="{{items.image}}" class="offersImage"></div><!-----{{items.image}}------>
+                </div>
+                <div class="gridInformation">
+                    <div class="textNameInformation">{{items.title}}</div>
+                    <div>
+                        <ion-grid class="gridInformation">
+                        <ion-row>
+                            <ion-col class="textAlignStart texttimeInformation" size="6">باقي للعرض {{items.duration}} ايام</ion-col>
+                            <ion-col class="textAlignEnd textInformation" size="6" (click)="functionAddOffersToCart(items.id,i)" style="direction:rtl"><img src="../../assets/imgs/cart.png" style="width:25px; height:25px"></ion-col>
+                        </ion-row>
+                    </ion-grid> 
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div *ngIf="offersSkeleton"> <!-----*ngIf="offersSkeleton"------>
+                <div class="padding5" *ngFor="let items of returnAllOffersArray">
+                    <div style="background-color:#ffffff" class="radu"><img src="../../assets/imgs/def3.png" class="radu"></div>
+                    <div class="gridInformation">
+                    <div class="textNameskeletonInformation"><ion-skeleton-text animated style="height:15px;width: 150px;"></ion-skeleton-text></div>
+                    <div>
+                        <ion-grid class="gridInformation">
+                            <ion-row>
+                                <ion-col class="textAlignStart texttimeskeletonInformation" size="6"><ion-skeleton-text animated style="height:15px;width: 150px;"></ion-skeleton-text></ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="offers==0" class="divEmptyVal">
+            <div>
+                <img src="../../assets/imgs/noOffer.png" style="width:150px; height:150px">
+            </div>
+            <div class="emptyFirstText">
+                يوجد مشكلة في عرض البيانات
+            </div>
+            <div class="emptyLastText">
+                لم يتم إضافة اي بيانات على هذه الشاشة حاليا
+            </div>
+        </div>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+        <ion-infinite-scroll-content loadingSpinner="lines" loadingText="يتم سحب البيانات....">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+<ion-footer class="ion-no-border">
+<ion-toolbar class="footerToolbar">
+	<div class="width100">
+        <div class="menueClass" (click)="functionGoToHome()">
+        	<div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+            <div class="labelClass">الرئيسية</div>
+        </div>
+           <div class="menueClass" (click)="functionGoToStores()">
+        	<div><img src="../../assets/imgs/Group863.png" style="width:20px"></div>
+            <div class="labelClass">المتاجر</div>
+        </div>
+        <div class="menueClass" (click)="functionGoToShoppingcart()">
+        	<div><img src="../../assets/imgs/Group10.png" style="width:20px"></div>
+            <ion-badge slot="start" mode='ios'>{{productInShopingCart}}</ion-badge>
+            <div class="labelClass">سلة الشراء</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group865.png" style="width:23px"></div>
+            <div class="labelClass">المنتجات</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group866.png" style="width:21px"></div>
+            <div class="labelClass">قائمتي</div>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-footer>

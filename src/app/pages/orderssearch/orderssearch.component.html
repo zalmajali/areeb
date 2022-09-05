@@ -1,0 +1,83 @@
+<ion-content>
+    <div (click)="closeModel()">
+   		<ion-icon name="close" style="font-size:40px"></ion-icon>
+    </div>
+    <div class="contentDiv">
+ 	<div class="subContentDiv">
+        <div class="divTitle fontSize20">
+            بحث متقدم في الطلبات
+        </div>
+        <form style="display: contents;" (ngSubmit)="saveAndBack()">
+        <div class="paddingBottom">
+            <ion-item lines="none">
+                <ion-input type="number" [(ngModel)]="orderNumber" [ngModelOptions]="{standalone: true}" placeholder="رقم الطلب"></ion-input>
+            </ion-item>
+        </div> 
+        <div class="paddingBottom">
+            <ion-item lines="none">
+                <ion-input type="text" [(ngModel)]="storeName" [ngModelOptions]="{standalone: true}" placeholder="إسم المتجر"></ion-input>
+            </ion-item>
+        </div> 
+         <div class="paddingBottom">
+            <ion-item lines="none">
+                <ion-input type="text" [(ngModel)]="productName" [ngModelOptions]="{standalone: true}" placeholder="إسم المنتج"></ion-input>
+            </ion-item>
+        </div> 
+         <div>
+            <div class="titleText">سعر المنتج</div>
+        </div> 
+        <div class="paddingBottom">
+              <ion-grid class="padding0">
+                <ion-row>
+                    <ion-col class="textAlignStart" size="6" style="padding-bottom:0px">
+                        <ion-item lines="none">
+                            <ion-input type="text" [(ngModel)]="priceFrom" [ngModelOptions]="{standalone: true}" placeholder="من"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col class="textAlignEnd" size="6"  style="padding-bottom:0px">
+                        <ion-item lines="none">
+                            <ion-input type="text" [(ngModel)]="priceTo" [ngModelOptions]="{standalone: true}" placeholder="الى"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div> 
+        <div>
+            <div class="titleText">تاريخ الطلب</div>
+        </div> 
+        <div class="paddingBottom5">
+            <ion-grid class="padding0">
+                <ion-row>
+                    <ion-col class="textAlignStart" size="6">
+                       <ion-item lines="none">
+                  	   	<ion-datetime  displayFormat="YYYY-MM-DD" name="fromDateAdd" value="{{fromDate}}" mode='ios' min="2021-01-01" placeholder="من" (ionChange)="checkFirstDate($event.target.value)" cancelText="إلغاء" doneText="تطبيق"></ion-datetime>
+                	  </ion-item>
+                    </ion-col>
+                    <ion-col class="textAlignEnd" size="6">
+                <ion-item lines="none">
+                  <ion-datetime displayFormat="YYYY-MM-DD" name="toDateAdd" value="{{toDate}}" mode='ios' min="2021-01-01" placeholder="الى" (ionChange)="checkLastDate($event.target.value)" cancelText="إلغاء" doneText="تطبيق"></ion-datetime>
+                </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div class="paddingBottom">
+            <ion-item lines="none">
+                <ion-select value={{status}} (ionChange)="selectValStatus($event.target.value)"  placeholder="حالة الطلب" mode="ios" interface="popover" class="my-custom-interface">
+                  <ion-select-option value="1">قيد المعالجة</ion-select-option>
+                  <ion-select-option value="2">قيد التوصيل</ion-select-option>
+                  <ion-select-option value="3">تم التوصيل</ion-select-option>
+                  <ion-select-option value="4">ملغاة</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </div>
+        <div>
+        <div class="divButtonClass">
+            <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="saveAndBack()"><span style="font-size:13px;padding-top:4px">بحث</span></ion-button>
+          </div>     
+        </div>
+        <button style="visibility:hidden" id="submit" ion-button type="submit" ></button>
+        </form>
+    </div>
+ </div>
+</ion-content>

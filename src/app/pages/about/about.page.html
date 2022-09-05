@@ -1,0 +1,36 @@
+<ion-content>
+  <div style="margin-top:120px; text-align:center">
+    	<img style="width:125px;" src="../../assets/imgs/Group.png" >
+    </div>
+    <div class="firstTitle fontSize20 fontweight1">
+    	حول التطبيق
+    </div>
+    <div [innerHTML]="description" style="padding-top:25px; color:#494949; font-size:14px"></div>
+</ion-content>
+<ion-footer class="ion-no-border">
+<ion-toolbar class="footerToolbar">
+	<div class="width100">
+        <div class="menueClass" (click)="functionGoToHome()">
+        	<div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+            <div class="labelClass">الرئيسية</div>
+        </div>
+           <div class="menueClass" (click)="functionAllStores()">
+        	<div><img src="../../assets/imgs/Group863.png" style="width:20px"></div>
+            <div class="labelClass">المتاجر</div>
+        </div>
+        <div class="menueClass" (click)="functionGoToShoppingcart()">
+        	<div><img src="../../assets/imgs/Group10.png" style="width:20px"></div>
+            <ion-badge slot="start" mode='ios'>{{productInShopingCart}}</ion-badge>
+            <div class="labelClass">سلة الشراء</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group865.png" style="width:23px"></div>
+            <div class="labelClass">المنتجات</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group866.png" style="width:21px"></div>
+            <div class="labelClass">قائمتي</div>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,63 @@
+<ion-content>
+<div style="margin-top:120px; text-align:center">
+    	<img style="width:125px;" src="../../assets/imgs/Group.png" >
+    </div>
+    <div class="firstTitle fontSize20 fontweight1">
+    	تواصل معنا
+    </div>
+	<div style="padding-top:50px">
+        <form style="display: contents;" (ngSubmit)="contactSend()">
+        <div class="paddingBottom">
+            <ion-item lines="none" class="{{errorFullName}}">
+                <ion-input type="text" [(ngModel)]="fullName" [ngModelOptions]="{standalone: true}" placeholder="الاسم الكامل" (ionInput)="checkFullName($event.target.value)"></ion-input>
+            </ion-item>
+            <div class="errorTitle" *ngIf="isErrorFullName == 0">الرجاء إدخال الاسم الكامل</div>
+        </div> 
+        <div class="paddingBottom">
+            <ion-item lines="none" class="{{errorNumber}}">
+                <ion-input type="number" [(ngModel)]="number" [ngModelOptions]="{standalone: true}" placeholder="رقم الجوال" (ionInput)="checkNumber($event.target.value)"></ion-input><span class="class962">+962</span>
+            </ion-item>
+            <div class="errorTitle" *ngIf="isErrorNumber == 0">الرجاء إدخال رقم الجوال</div>
+        </div> 
+        <div class="paddingBottom">
+            <ion-item lines="none" class="{{errorMsg}}">
+                <ion-textarea rows="5" [(ngModel)]="msg" [ngModelOptions]="{standalone: true}" placeholder="نص الملاحظة" (ionInput)="checkMsg($event.target.value)"></ion-textarea>
+            </ion-item>
+            <div class="errorTitle" *ngIf="isErrorMsg == 0">الرجاء إدخال نص الملاحظة</div>
+        </div>
+        <div>
+          <div class="divButtonClass">
+            <ion-button class="oneButton fontSize18 fontweight1" (click)="contactSend()" id="submit" disabled="{{!isdisabled}}"><span style="font-size:13px;padding-top:4px">إرسال</span></ion-button>
+          </div>
+        </div>
+        <button style="visibility:hidden" id="submit" ion-button type="submit" ></button>
+        </form>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+<ion-toolbar class="footerToolbar">
+	<div class="width100">
+        <div class="menueClass" (click)="functionGoToHome()">
+        	<div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+            <div class="labelClass">الرئيسية</div>
+        </div>
+           <div class="menueClass" (click)="functionGoToStores()">
+        	<div><img src="../../assets/imgs/Group863.png" style="width:20px"></div>
+            <div class="labelClass">المتاجر</div>
+        </div>
+        <div class="menueClass" (click)="functionGoToShoppingcart()">
+        	<div><img src="../../assets/imgs/Group10.png" style="width:20px"></div>
+            <ion-badge slot="start" mode='ios'>{{productInShopingCart}}</ion-badge>
+            <div class="labelClass">سلة الشراء</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group865.png" style="width:23px"></div>
+            <div class="labelClass">المنتجات</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group866.png" style="width:21px"></div>
+            <div class="labelClass">قائمتي</div>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-footer>

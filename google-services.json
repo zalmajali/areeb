@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "304397929395",
+    "firebase_url": "https://areeb-3be6c.firebaseio.com",
+    "project_id": "areeb-3be6c",
+    "storage_bucket": "areeb-3be6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304397929395:android:149feb7bef413a9aab99c6",
+        "android_client_info": {
+          "package_name": "com.areeb.areebjo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304397929395-f9a9pr7p22snj06gtbuj72o4n5v77n9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIo5A7qoDC1OHd-7J6hCewwHUD4oTkPFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304397929395-f9a9pr7p22snj06gtbuj72o4n5v77n9l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "304397929395-39aesrn9kkua1ehk0kbckj94bjc6mnc1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.areeb.areebjo",
+                "app_store_id": "1534874398"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

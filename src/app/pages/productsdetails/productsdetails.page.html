@@ -1,0 +1,189 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+  	<ion-buttons slot="end">
+      <img (click)="backToStore()" src="../../assets/imgs/back.png" style="width:30px; height:24px;margin-left:10px"/>
+    </ion-buttons>
+    <ion-title>{{returnProductsInformationTitle}}</ion-title>
+    <ion-buttons slot="start" (ngSubmit)="searchAllValues()">
+      <img src="../../assets/imgs/searchVal.png" style="width:27px; height:27px;"/>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="searchForm">
+        <form style="display: contents;" (ngSubmit)="searchAllValues()">
+            <ion-item lines="none">
+            	<ion-input [type]="text" [ngModelOptions]="{standalone: true}" #searchInput [(ngModel)]="searchValues" placeholder="ما الذي تبحث عنه"></ion-input><ion-img src="../../assets/imgs/search.png" (click)="searchAllValues()" class="search"></ion-img>
+            </ion-item>
+        	<button style="display: contents;" id="submit" ion-button type="submit" ></button>
+        </form>
+    </div>
+<div>
+	<div *ngIf="!productsSkeleton">
+    	<div style="background-color:#ffffff">
+        <div *ngIf="showSlider == 0"><img src="{{returnProductsInformationImage}}"></div>
+        <ion-slides *ngIf="showSlider == 1" pager="true" autoPlay="true" loop="true" (ionSlidesDidLoad)="slidesDidLoad()" (ionSlideDidChange)="slidesDidLoad()"  #slidesOffersHome >
+            <ion-slide>
+                <div><img src="{{returnProductsInformationStoreImage}}" style="min-height:170px"></div>
+            </ion-slide>
+             <ion-slide *ngFor="let items of returnProductsImage">
+                <div><img src="{{items.valuesFields}}"></div>
+            </ion-slide>
+        </ion-slides> 
+     </div>
+     <div class="divInfo">
+         <ion-grid class="gridDepartInformation">
+            <ion-row>
+              <ion-col class="textAlignStart gridDepartInformation" style="direction:rtl" size="6">
+                    <div class="productTitle">{{returnProductsInformationTitle}}</div>
+                </ion-col>
+                <ion-col class="textAlignEnd textDepartInformation" style="direction:rtl" size="6">
+                    <div *ngIf="returnProductsInformationOfferPrice!=0">
+                        <span class="realPrice">{{realPrice}} JOD</span> <span class="oldPrice">{{oldPrice}} JOD</span>
+                    </div>
+                    <div *ngIf="returnProductsInformationOfferPrice==0">
+                        <span class="realPrice">{{realPrice}} JOD</span>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+     </div>
+     <div class="productDesc">{{returnProductsInformationDescription}}</div>
+    </div>
+     <div *ngIf="productsSkeleton">
+    	<div style="background-color:#ffffff">
+            <div ><img src="../../assets/imgs/def3.png"></div>
+         </div>
+         <div class="divInfo">
+             <ion-grid class="gridDepartInformation">
+                <ion-row>
+                  <ion-col class="textAlignStart gridDepartInformation" style="direction:rtl" size="6">
+                        <div class="productTitle"><ion-skeleton-text animated style="height:15px;width:100%"></ion-skeleton-text></div>
+                    </ion-col>
+                    <ion-col class="textAlignEnd textDepartInformation" style="direction:rtl; padding-top:0px" size="6">
+                        <div>
+                            <ion-skeleton-text animated style="height:15px;width:100%"></ion-skeleton-text>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+         </div>
+         <div class="productDesc"><ion-skeleton-text animated style="height:35px;width:100%"></ion-skeleton-text></div>
+    </div>
+     <div>
+     	<div class="titleSection">مكونات المنتج</div>
+        <div class="boxSection">
+        	<div *ngIf="!productsSkeleton">
+                <ion-item class="cardItem" lines="none" *ngFor="let items of returnIngredientsArray; let i=index">
+                    <ion-label>{{items.title}}</ion-label>
+                    <ion-checkbox slot="start" value="{{items}}" mode="ios" (ionChange)="getTheIngredients($event,i)"></ion-checkbox>
+                </ion-item>
+            </div>
+            <div *ngIf="productsSkeleton">
+                <ion-item class="cardItem" lines="none" *ngFor="let items of returnIngredientsArray; let i=index">
+                    <ion-label><ion-skeleton-text animated style="height:15px;width:220px"></ion-skeleton-text></ion-label>
+                </ion-item>
+            </div>
+        </div>
+     </div>
+     <div *ngFor="let items of returnOptionsArray; let i=index">
+     	<div class="titleSectionTow">{{items.catName}}</div>
+        <div class="boxSection">
+        	<div *ngIf="!productsSkeleton">
+            <ion-radio-group (ionChange)="getTheOptions($event,i)">
+                <ion-item class="cardItem" lines="none" *ngFor="let itemsOptions of items.options; let j=index">
+                    <ion-label>{{itemsOptions.title}}</ion-label>
+                    <ion-radio slot="start" id="radioPro" mode="md" value="{{j}}"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </div>
+            <div *ngIf="productsSkeleton">
+                <ion-item class="cardItem" lines="none" *ngFor="let items of items.options; let i=index">
+                    <ion-label><ion-skeleton-text animated style="height:15px;width:220px"></ion-skeleton-text></ion-label>
+                </ion-item>
+            </div>
+        </div>
+     </div>
+     <div *ngFor="let items of returnAdditionsArray; let i=index">
+     	<div class="titleSectionTow">{{items.catName}}</div>
+        <div class="boxSection">
+        	<div *ngIf="!productsSkeleton">
+           		<ion-item class="cardItem" lines="none" *ngFor="let itemsAdditions of items.additions; let j=index"><
+                     <div class="divLabeladdishions">
+                    	<div class="divLabelLabeladdishions">{{itemsAdditions.title}}</div>
+    					<div class="divLabelPriceaddishions">{{itemsAdditions.price}} JOD</div>
+                     </div>
+                    <ion-checkbox slot="start" value="{{itemsAdditions.id}}" mode="ios" (ionChange)="getTheAdditions($event,i,j)"></ion-checkbox>
+                </ion-item>
+            </div>
+            <div *ngIf="productsSkeleton">
+                <ion-item class="cardItem" lines="none" *ngFor="let items of items.options; let i=index">
+                    <ion-label><ion-skeleton-text animated style="height:15px;width:220px"></ion-skeleton-text></ion-label>
+                </ion-item>
+            </div>
+        </div>
+     </div>
+    <div>
+        <ion-grid>
+        <ion-row>
+            <ion-col *ngFor="let items of returnProductsSelectAndTex; let i=index" class="textAlignCenter textInformation" size="4">
+                <div *ngIf="!productsSkeleton">
+                    <div class="headerTestVal">{{items.title}}</div>
+                    <div class="footerTestVal">{{items.valuesFields}}</div>
+                </div>
+                <div *ngIf="productsSkeleton">
+                    <div class="headerTestVal"><ion-skeleton-text animated style="height:15px;width:100%;border-radius: 0px;"></ion-skeleton-text></div>
+                    <div class="footerTestVal"><ion-skeleton-text animated style="height:15px;width:100%;border-radius: 0px;"></ion-skeleton-text></div>
+                </div>
+            </ion-col>
+        </ion-row>
+        </ion-grid>
+    </div>
+    <div>
+        <ion-grid>
+        <ion-row>
+            <ion-col *ngFor="let items of returnProductsLongTex; let i=index" class="textAlignCenter textInformation" size="12">
+                <div *ngIf="!productsSkeleton">
+                    <div class="headerTestVal">{{items.title}}</div>
+                    <div class="footerTestVal">{{items.valuesFields}}</div>
+                </div>
+                <div *ngIf="productsSkeleton">
+                    <div class="headerTestVal"><ion-skeleton-text animated style="height:15px;width:100%;border-radius: 0px;"></ion-skeleton-text></div>
+                    <div class="footerTestVal"><ion-skeleton-text animated style="height:25px;width:100%;border-radius: 0px;"></ion-skeleton-text></div>
+                </div>
+            </ion-col>
+        </ion-row>
+        </ion-grid>
+    </div>
+</div>
+<div slot="fixed" class="divButtonClass">
+    <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="addProductToChart()"><span style="font-size:13px;padding-top:4px">{{realPrice}} JOD  إضافة المنتج على سلة الشراء</span></ion-button>
+</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+<ion-toolbar class="footerToolbar">
+	<div class="width100">
+        <div class="menueClass" (click)="functionGoToHome()">
+        	<div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+            <div class="labelClass">الرئيسية</div>
+        </div>
+           <div class="menueClass" (click)="functionGoToStores()">
+        	<div><img src="../../assets/imgs/Group863.png" style="width:20px"></div>
+            <div class="labelClass">المتاجر</div>
+        </div>
+        <div class="menueClass" (click)="functionGoToShoppingcart()">
+        	<div><img src="../../assets/imgs/Group10.png" style="width:20px"></div>
+            <ion-badge slot="start" mode='ios'>{{productInShopingCart}}</ion-badge>
+            <div class="labelClass">سلة الشراء</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group865.png" style="width:23px"></div>
+            <div class="labelClass">المنتجات</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group866.png" style="width:21px"></div>
+            <div class="labelClass">قائمتي</div>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-footer>

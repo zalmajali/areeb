@@ -1,0 +1,72 @@
+<ion-content>
+    <div style="margin-top:120px; text-align:center">
+    	<img style="width:125px;" src="../../assets/imgs/Group.png" >
+    </div>
+    <div class="firstTitle fontSize20 fontweight1">
+    	أدخل الى حسابك الان
+    </div>
+	<div style="padding-top:50px">
+  		<form style="display: contents;" (ngSubmit)="checkUser()">
+            <div class="paddingBottom">
+                <ion-item lines="none" class="{{errorNumber}}">
+                    <ion-input type="number" [(ngModel)]="number" [ngModelOptions]="{standalone: true}" placeholder="رقم الجوال" (ionInput)="checkNumber($event.target.value)"></ion-input><span class="class962">+962</span>
+                </ion-item>
+                <div class="errorTitle" *ngIf="isErrorNumber == 0">الرجاء إدخال رقم الجوال</div>
+            </div> 
+            <div class="paddingBottom">
+                <ion-item lines="none" class="{{errorPassword}}">
+                    <ion-input [type]="showPassword ? 'text' : 'password'" [ngModelOptions]="{standalone: true}" [(ngModel)]="password" placeholder="كلمة المرور" (ionInput)="checkPassword($event.target.value)"></ion-input><ion-icon [name]="showPassword ? 'eye' : 'eye-off'" class="eye" (click)="changeInputType()"></ion-icon>
+                </ion-item>
+                <div class="errorTitle" *ngIf="isErrorPassword == 0">الرجاء إدخال كلمة المرور</div>
+            </div>
+            <div class="paddingBottom paddingTop3">
+                <div class="forgetPassword" (click)="forgotPasssword()">نسيت كلمة المرور</div>
+            </div>
+            <div>
+              <div class="divButtonClass">
+                <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="checkUser()" disabled="{{!isdisabled}}"><span style="font-size:13px;padding-top:4px">دخول</span></ion-button>
+              </div>
+            </div>
+            <button style="visibility:hidden" id="submit" ion-button type="submit" ></button>
+    	</form>
+         <div class="lastTitle fontSize16 fontweight1">
+            أو سجل الدخول من خلال
+        </div>
+        <div>
+            <div class="divButtonClassIcon" style="width:100%; text-align:center">
+                <span (click)="facebookLogin()" class="spanClassFaceBookFater"><img src="../../assets/imgs/facebook.png" style="width:20px"> <span class="spanClassFaceBookchiled">FACEBOOK</span></span>
+                <span (click)="googlePluseLogin()" class="spanClassGoogleFater"><img src="../../assets/imgs/google.png" style="width:20px"> <span class="spanClassFaceBookchiled">GOOGLE</span></span>
+            </div>
+            <div class="divButtonClassIconAppel" *ngIf="showLoginWithApple == 1">
+                <ion-icon name="logo-apple" class="iconClassAppel" (click)="appleLogin()" ></ion-icon>
+            </div>
+        </div>
+	</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+<ion-toolbar class="footerToolbar">
+	<div class="width100">
+        <div class="menueClass" (click)="functionGoToHome()">
+        	<div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+            <div class="labelClass">الرئيسية</div>
+        </div>
+           <div class="menueClass" (click)="functionGoToStores()">
+        	<div><img src="../../assets/imgs/Group863.png" style="width:20px"></div>
+            <div class="labelClass">المتاجر</div>
+        </div>
+        <div class="menueClass" (click)="functionGoToShoppingcart()">
+        	<div><img src="../../assets/imgs/Group10.png" style="width:20px"></div>
+            <ion-badge slot="start" mode='ios'>{{productInShopingCart}}</ion-badge>
+            <div class="labelClass">سلة الشراء</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group865.png" style="width:23px"></div>
+            <div class="labelClass">المنتجات</div>
+        </div>
+        <div class="menueClass" (click)="functionOpenMenue()">
+        	<div><img src="../../assets/imgs/Group866.png" style="width:21px"></div>
+            <div class="labelClass">قائمتي</div>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,274 @@
+.headerToolbar{
+	--background: #ffffff;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:14px
+}
+ion-item{
+	--background:var(--ion-color-inputFormColor);
+	background-color:#ffffff;
+   --ion-background-color:var(--ion-color-inputFormColor);
+   --inner-padding-start:0px;
+   border-radius:10px;
+   --border-radius:10px;
+   --padding-bottom:3px;
+}
+ion-input{
+		--placeholder-color:var(--ion-color-formPlaseHolderColor);
+	--placeholder-opacity:1;
+	--padding-top:18px;
+	color:var(--ion-color-formPlaseHolderColor);
+	font-size:15px;
+}
+.search{
+	width:27px;
+	height:27px
+}
+.searchForm{
+	padding:10px 15px 10px 15px;
+}
+.largDiveSortAndFilter{
+   position: sticky;
+   top: 0;
+   background-color: #ffffff;
+   z-index: 10000;
+   border-top:2px solid #EAEAEA;
+}
+.gridDepartInformation{
+	padding-bottom: 0px;
+	padding-top:0px
+}
+.countOfStores{
+	font-size: 15px;
+    color: #494949;
+	padding-top: 8px;
+}
+.showAndFilter{
+	float:left;
+	border-right:1px solid #EAEAEA;
+	padding:7px 5px 0px 5px
+}
+
+.catSlides{
+	width:140px;
+	height:140px;
+	margin-left:2px;
+	margin-right:2px
+}
+.catImage{
+	width:55px;
+	height:55px; 
+	margin:auto
+}
+.catLabel{
+	padding-top:0px;
+	font-size:13px;
+	color:#494949;
+}
+.catLabelCheck{
+	padding-top: 0px;
+    font-size: 13px;
+    color: #F9475C;
+}
+.catCard{
+	background-color:var(--ion-color-wight);
+	width:130px;
+	height:130px;
+	margin: 0px;
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+}
+.catDiv{
+	padding-top: 25px;
+	text-align:center;
+	width:100%;
+}
+.catDivskeleton{
+	padding-top: 25px;
+	text-align:center;
+	width:100%;
+}
+.catLabelskeleton{
+	padding-top:13px;
+	font-size:13px;
+	color:#494949;
+	padding-left:25px;
+	padding-right:25px
+}
+.slidesData{
+	width:auto;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px
+}
+.catCardSubCat{
+	background-color:var(--ion-color-wight);
+	width:130px;
+	height:48px;
+	margin: 0px;
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+}
+.subCatLabel{
+	padding-top: 15px;
+	font-size:14px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.textSkeletonSlider{
+	height:15px;
+	width: 90px;
+}
+.divSkeletonLarg{
+	padding-top:13px;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+.offersDiv{
+	position: relative
+}
+.offersContent{
+	position: absolute;
+	font-size:3vw;
+	color:#ffffff;
+	top:15%;
+	text-align: center;
+	width: 100%;
+}
+.offersImage{
+	width:100%;
+	height:auto; 
+	margin:auto;
+	display:flex;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+.gridInformation{
+	background-color: #ffffff;
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
+	padding:0px
+}
+.textNameInformation{
+	font-size:15px;
+	color:#494949;
+	padding:0px;
+	padding-right:10px;
+	padding-top:10px;
+	padding-bottom:2px
+}
+.texttimeInformation{
+	font-size:12px;
+	color:#BDBDBD;
+	padding:0px;
+	padding-right:10px;
+	padding-bottom:0px;
+	padding-top: 3px;
+}
+.textInformation{
+	color:#494949;
+	padding:0px;
+	padding-left:10px;
+	padding-top:0px;
+	padding-bottom:2px
+}
+.texttimeskeletonInformation{
+	font-size:12px;
+	color:#BDBDBD;
+	padding:0px;
+	padding-right:10px;
+	padding-bottom:10px;
+}
+.textNameskeletonInformation{
+    font-size: 15px;
+    color: #494949;
+    padding: 0px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+.radu{
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+.divEmptyVal{
+    text-align: center;
+    padding-top: 50%;
+}
+.emptyFirstText{
+    font-size: 12px;
+    color:#F9475C;
+    padding-bottom: 5px;
+}
+.emptyLastText{
+    font-size: 14px;
+    color:#F9475C;
+}
+.showAllDivCat{
+	height:0px
+}
+.showDivCat{
+	opacity:0;
+	transition:2s linear;
+}
+/*menu style*/
+.footerToolbar{
+--background: #ffffff;
+--border-width:0px;
+--padding-top:7px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#494949;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 13px !important;
+    margin-bottom: 9px;
+	font-weight: 600;
+}
+ion-badge{
+    --background: #F9475C;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 6px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/

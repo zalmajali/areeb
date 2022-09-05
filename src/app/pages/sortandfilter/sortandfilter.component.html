@@ -1,0 +1,199 @@
+<ion-content>
+    <div (click)="closeModel()">
+   		<ion-icon name="close" style="font-size:40px"></ion-icon>
+    </div>
+    <div class="contentDiv">
+        <div class="subContentDiv">
+        	<div>
+             <div *ngIf="typeOperation == 1">
+                <ion-radio-group [(ngModel)]="offerSortingVal">
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الانتهاء : الاحدث</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="1"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الانتهاء : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="2"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                       <ion-label>تاريخ الاضافة : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="3"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الاضافة : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="4"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>السعر : أعلى</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="5"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>السعر : أقل</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="6"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="none" class="lastItem"></ion-item>
+                </ion-radio-group>
+                 <div>
+                   <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="saveDataAndBackOffers()"><span style="font-size:13px;padding-top:4px">تطبيق</span></ion-button>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="typeOperation == 5">
+                <ion-radio-group [(ngModel)]="allOfferSortingVal">
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الانتهاء : الاحدث</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="1"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الانتهاء : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="2"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                       <ion-label>تاريخ الاضافة : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="3"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الاضافة : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="4"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>السعر : أعلى</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="5"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>السعر : أقل</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="6"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="none" class="lastItem"></ion-item>
+                </ion-radio-group>
+                 <div>
+                  
+                  <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="saveDataAndBackAllOffers()"><span style="font-size:13px;padding-top:4px">تطبيق</span></ion-button>
+                  </div>
+                  
+                </div>
+              </div>
+              <div *ngIf="typeOperation == 6">
+                <ion-radio-group [(ngModel)]="allStoreSortingVal">
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الاضافة : الاحدث</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="1"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الاضافة : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="2"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                       <ion-label>الاكثر مشاهدة</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="3"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>الاكثر تفضيلا</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="4"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>الاعلى تقييما</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="5"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>تاريخ التفضيل : الاحدث</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="6"></ion-radio>
+                    </ion-item>
+                     <ion-item lines="full">
+                        <ion-label>تاريخ التفضيل : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="7"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="none" class="lastItem"></ion-item>
+                </ion-radio-group>
+                 <div>
+                  <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="saveDataAndBackAllStores()"><span style="font-size:13px;padding-top:4px">تطبيق</span></ion-button>
+                  </div>
+                </div>
+              </div>
+             <div *ngIf="typeOperation == 2">
+                <ion-radio-group [(ngModel)]="productsOneSortingVal">
+                    <ion-item lines="full">
+                       <ion-label>تاريخ الاضافة : الاحدث</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="1"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>تاريخ الاضافة : الاقدم</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="2"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>السعر : أعلى</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="3"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>السعر : أقل</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="4"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="none" class="lastItem"></ion-item>
+                </ion-radio-group>
+                 <div>
+                  <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="saveDataAndBackProductsOne()"><span style="font-size:13px;padding-top:4px">تطبيق</span></ion-button>
+                  </div>
+                </div>
+              </div>
+               <div *ngIf="typeOperation == 3">
+                <ion-radio-group [(ngModel)]="productsTowSortingVal">
+                    <ion-item lines="full">
+                       <ion-label>جميع المنتجات</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="1"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>منتجات عليها عرض</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="2"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label>امنتجات دون عرض</ion-label>
+                        <ion-radio slot="end"  mode="ios" value="3"></ion-radio>
+                    </ion-item>
+                    <ion-item lines="none" class="lastItem"></ion-item>
+                </ion-radio-group>
+                 <div>
+                   <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="saveDataAndBackProductsTow()"><span style="font-size:13px;padding-top:4px">تطبيق</span></ion-button>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="typeOperation == 4">
+              <ion-item lines="full">
+                    <ion-label>جميع المناطق</ion-label>
+                    <ion-checkbox slot="start" value="0" [(ngModel)]="allRegion" mode="ios" (ionChange)="isSelectdVal($event)"></ion-checkbox>
+              	</ion-item>
+              	<ion-item lines="full" *ngFor="let items of returnRegionsArray; let i=index">
+                    <ion-label>{{items.title}}</ion-label>
+                    <ion-checkbox slot="start" value="{{items.id}}" mode="ios" (ionChange)="isSelectdVal($event)" [checked]="items.checked==1 ? 'true' : 'false'"></ion-checkbox>
+              	</ion-item>
+                <ion-item lines="none" class="lastItem"></ion-item>
+                <div>
+                  <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="applySelectdVal()"><span style="font-size:13px;padding-top:4px">تطبيق</span></ion-button>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="typeOperation == 7">
+              <ion-item lines="full">
+                    <ion-label>جميع المناطق</ion-label>
+                    <ion-checkbox slot="start" value="0" [(ngModel)]="allRegionStore" mode="ios" (ionChange)="isSelectRegionForStore($event)"></ion-checkbox>
+              	</ion-item>
+              	<ion-item lines="full" *ngFor="let items of returnRegionsArray; let i=index">
+                    <ion-label>{{items.title}}</ion-label>
+                    <ion-checkbox slot="start" value="{{items.id}}" mode="ios" (ionChange)="isSelectRegionForStore($event)" [checked]="items.checked==1 ? 'true' : 'false'"></ion-checkbox>
+              	</ion-item>
+                <ion-item lines="none" class="lastItem"></ion-item>
+                <div>
+                  <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="applySelectdValStore()"><span style="font-size:13px;padding-top:4px">تطبيق</span></ion-button>
+                  </div>
+                </div>
+              </div>
+             </div> 
+             </div> 
+    </div>
+</ion-content>

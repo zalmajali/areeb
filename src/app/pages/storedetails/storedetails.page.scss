@@ -1,0 +1,471 @@
+.headerToolbar{
+	--background: #ffffff;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:14px;
+}
+ion-item{
+	--background:var(--ion-color-inputFormColor);
+	background-color:#ffffff;
+   --ion-background-color:var(--ion-color-inputFormColor);
+   --inner-padding-start:0px;
+   border-radius:10px;
+   --border-radius:10px;
+   --padding-bottom:3px;
+}
+ion-input{
+		--placeholder-color:var(--ion-color-formPlaseHolderColor);
+	--placeholder-opacity:1;
+	--padding-top:18px;
+	color:var(--ion-color-formPlaseHolderColor);
+	font-size:15px;
+}
+.search{
+	width:27px;
+	height:27px
+}
+.searchForm{
+	padding:10px 15px 10px 15px;
+}
+.smallImage1{
+	border-radius: 100%;
+    width: 33px;
+    position: absolute;
+    left: 73px;
+    bottom: -15px;
+    height: 33px;
+}
+.smallImage2{
+	border-radius: 100%;
+    width: 30px;
+    position: absolute;
+    left: 40px;
+    bottom: -15px;
+    height: 30px;
+}
+.smallImage3{
+	border-radius: 100%;
+    width: 30px;
+    position: absolute;
+    left: 7px;
+    bottom: -14px;
+    height: 30px;
+}
+.storeTitle{
+	color: #494949;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 14px 2px 14px;
+}
+.storeDescription{
+	color: #494949;
+    font-size: 13px;
+    padding: 2px 14px 5px 14px;
+}
+.countLike{
+	border-radius: 7px;
+    position: absolute;
+    left: 11px;
+    bottom: 11px;
+    font-size: 12px;
+    color: #ffffff;
+    background: #000000;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.countLike1{
+	border-radius: 7px;
+    position: absolute;
+    left: 46px;
+    bottom: 11px;
+    font-size: 12px;
+    color: #ffffff;
+    background: #000000;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.countLike2{
+	border-radius: 7px;
+    position: absolute;
+    left: 82px;
+    bottom: 11px;
+    font-size: 12px;
+    color: #ffffff;
+    background: #000000;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.storeTime{
+	color: #494949;
+    font-size: 13px;
+    padding: 2px 14px 5px 14px;
+	float:right;
+	padding-top:50px;
+}
+.delstore{
+	color: #494949;
+    font-size: 15px;
+    padding: 2px 14px 5px 14px;
+	float:left;
+	padding-top:8px;
+}
+.delevCar{
+	background-color: #ffffff;
+    padding: 8px 9px 2px 10px;
+    border-radius: 5px;
+	color:#bdbdbd;
+}
+.delevCarTime{
+	background-color: #ffffff;
+    padding: 8px 9px 2px 10px;
+    border-radius: 5px;
+	color:#bdbdbd;
+	margin-top:4px
+}
+.delevPrice{
+	font-size:10px;
+	font-weight:600;
+	color:#494949;
+}
+.titleSkeletonImage{
+	height:15px;
+	width:50%
+}
+.deiscSkeletonImage{
+	height:11px;
+	width:85%
+}
+.storeTimeskeleton{
+	color: #494949;
+    font-size: 15px;
+    padding: 2px 14px 5px 14px;
+	float:right;
+	padding-top:50px;
+	width:100%;
+}
+ion-segment-button{
+	--color-checked:#494949;
+	--color:#494949;
+	--background:#EAEAEA;
+	--background-checked:#ffffff;
+	font-size:14px;
+	font-weight:600;
+	--indicator-color:#F9475C;
+	margin-top:20px;
+	max-width:100%
+}
+.gridDepartInformation{
+	padding-bottom: 0px;
+	padding-top:0px
+}
+.showAndFilter{
+	float:left;
+	border-right:1px solid #EAEAEA;
+	padding:7px 5px 0px 5px
+}
+.largDiveSortAndFilter{
+   top: 0;
+   background-color: #ffffff;
+   z-index: 10000;
+}
+.countOfStores{
+	font-size: 15px;
+    color: #494949;
+	padding-top: 8px;
+}
+.gridDepartInformation{
+	padding-bottom: 0px;
+	padding-top:0px
+}
+.showAndFilter{
+	float:left;
+	border-left:1px solid #EAEAEA;
+	padding:7px 5px 0px 5px;
+	border-right:1px solid #EAEAEA;
+}
+.sortingFilter{
+	float:left;
+	padding:7px 5px 0px 5px;
+	border-left:1px solid #EAEAEA;
+	margin-left:20px;
+}
+.slidesData{
+	width:auto;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px
+}
+.textSlider{
+	padding-right: 22px;
+    padding-bottom: 9px;
+    padding-left: 22px;
+    padding-top: 13px;
+    border-radius: 7px;
+    font-size: 14px;
+    color: #F9475c;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+.textSkeletonSlider{
+	height:10px;
+	width: 70px;
+	border-radius:0px
+}
+.productImage{
+	border-radius: 10px;
+    margin-right: 15px;
+    width: 80px;
+    height: 80px;
+    margin-top: 15px;
+}
+.cardProduct{
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+	position:relative;
+	background-color:#ffffff
+}
+.productImageDiv{
+	float:right;
+	padding-left:12px;
+}
+.productInformation{
+	font-size:11px;
+    color: #aba9aa;
+    padding-right: 5px;
+	padding-left:5px;
+	padding-top: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+	 text-overflow: ellipsis;
+	 overflow:hidden		
+}
+.productName{
+	font-size: 14px;
+    color: #494949;
+    font-weight: bold;
+    padding-right: 5px;
+	padding-top:14px
+}
+.productCatName{
+	font-size: 12px;
+    color: #494949;
+    font-weight: bold;
+    padding-right: 5px;
+	padding-top:1px
+}
+
+.border{
+	border-top:1px solid #EAEAEA;
+	margin:0px 15px 0px 15px;
+}
+.oldPrice {
+	font-size:13px;
+    position: relative;
+    display: inline-block;
+    color:#494949;
+}
+.oldPrice::before {
+    content: '';
+    border-bottom: 2px solid #494949;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+.realPrice{
+	padding-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #F9475C;
+}
+.proImageSkeletonImage{
+	height: 86px;
+    width: 86px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.titleImageSkeletonImage{
+	height: 15px;
+    width: 120px;
+    margin-right: 113px;
+}
+.catImageSkeletonImage{
+	height: 13px;
+    width: 120px;
+    margin-right: 113px;
+}
+.descImageSkeletonImage{
+	height: 12px;
+	width: 170px;
+}
+.sortingOfferFilter{
+	float:left;
+	padding:7px 5px 0px 5px;
+	border-left:1px solid #EAEAEA;
+	border-right:1px solid #EAEAEA;
+	margin-left:20px;
+}
+.offersDiv{
+	position: relative
+}
+.offersContent{
+	position: absolute;
+	font-size:3vw;
+	color:#ffffff;
+	top:15%;
+	text-align: center;
+	width: 100%;
+}
+.offersImage{
+	width:100%;
+	height:auto; 
+	margin:auto;
+	display:flex;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+.gridInformation{
+	background-color: #ffffff;
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
+	padding:0px
+}
+.textDepartInformationPrice{
+	padding-top:8px
+}
+.textNameInformation{
+	font-size:15px;
+	color:#494949;
+	padding:0px;
+	padding-right:10px;
+	padding-top:10px;
+	padding-bottom:2px
+}
+.texttimeInformation{
+	font-size:12px;
+	color:#BDBDBD;
+	padding:0px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top: 3px;
+}
+.textInformation{
+	color:#494949;
+	padding:0px;
+	padding-left:10px;
+	padding-top:0px;
+	padding-bottom:2px
+}
+.texttimeskeletonInformation{
+	font-size:12px;
+	color:#BDBDBD;
+	padding:0px;
+	padding-right:10px;
+	padding-bottom:10px;
+}
+.textNameskeletonInformation{
+    font-size: 15px;
+    color: #494949;
+    padding: 0px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+.radu{
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+
+.offerProductImage{
+  overflow: hidden;
+}
+.offerImageShow {
+display: block;
+    width: 120px;
+    height: 25px;
+    background-color: #F9475c;
+    transform: rotate(320deg);
+    position: absolute;
+    text-align: center;
+    line-height: 25px;
+    left: -42px;
+    top: 5px;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+
+.divEmptyVal{
+    text-align: center;
+    padding-top: 60px;
+}
+.emptyFirstText{
+    font-size: 12px;
+    color:#F9475C;
+    padding-bottom: 5px;
+}
+.emptyLastText{
+    font-size: 14px;
+    color:#F9475C;
+}
+
+
+/*menu style*/
+.footerToolbar{
+--background: #ffffff;
+--border-width:0px;
+--padding-top:7px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#494949;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 13px !important;
+    margin-bottom: 9px;
+	font-weight: 600;
+}
+ion-badge{
+     --background: #F9475C;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 6px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/

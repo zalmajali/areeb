@@ -1,0 +1,132 @@
+ion-content{
+	direction:rtl;
+	 --background: transparent;
+	 --overflow:hidden;
+}
+ion-icon {
+  font-size: 30px;
+  color:#ffffff
+}
+.divTitle{
+	text-align:center;
+	padding-bottom:20px;
+	padding-top:20px;
+	color:#494949;
+	font-size: 17px;
+    font-weight: 600;
+}
+.class962{
+	color:var(--ion-color-formPlaseHolderColor);
+	direction:ltr;
+	padding-top:11px;
+}
+/*form*/
+ion-item{
+	--background:var(--ion-color-inputFormColor);
+	background-color:#ffffff;
+   --ion-background-color:var(--ion-color-inputFormColor);
+   --inner-padding-start:0px;
+   border-radius:10px;
+   --border-radius:10px;
+   --padding-bottom:3px;
+   border: 1px solid #e1e1e1;
+}
+ion-input{
+		--placeholder-color:var(--ion-color-formPlaseHolderColor);
+	--placeholder-opacity:1;
+	--padding-top:18px;
+	color:var(--ion-color-formPlaseHolderColor);
+	font-size:15px;
+}
+ion-textarea{
+		--placeholder-color:var(--ion-color-formPlaseHolderColor);
+	--placeholder-opacity:1;
+	color:var(--ion-color-formPlaseHolderColor);
+	font-size:15px;
+}
+.oneButton{
+	--background: #F9475C !important;
+	--color:#ffffff !important;
+	--border-radius: 30px;
+	--padding:0px;
+	height: 47px;
+    width: 35%;
+}
+.oneButton.activated{
+	--background: #F9475C !important;
+	padding:0px;
+}
+.divButtonClass{
+	text-align:center;
+	padding-top:17px;
+	padding-bottom:10px;
+}
+/*pageContent*/
+ion-content{
+	--padding-end:10px;
+	--padding-start:10px;
+	--padding-bottom:10px
+}
+.contentDiv{
+	width:100%;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+	padding-right:10px;
+	padding-left:10px;
+	height:90%;
+	background-color:#ffffff;
+	overflow:hidden;
+}
+.subContentDiv{
+	width:100%;
+	height:100%;
+	overflow-y:auto
+}
+.loadingData{
+	text-align:center;
+	font-size:13px;
+	--ion-background-color:var(--ion-color-wight);
+	color: var(--ion-color-header);
+	padding-bottom:10px;
+}
+.imageLoading{
+	width:40px;
+	height:40px;
+	vertical-align:middle;
+}
+#map_canvas {
+  width: 90%;
+  height: 80%;
+  border: 1px solid red;
+}
+#address {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#map {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+.map-wrapper {
+  position: relative;
+  #map_center {
+    position: absolute;
+    z-index: 99;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    margin-left: -21px;
+    margin-top: -41px;
+  }
+}
+.locationInformation{
+	font-size: 18px;
+    color: #F9475C;
+    padding-right: 5px;
+	padding-top:20px
+}

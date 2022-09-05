@@ -1,0 +1,121 @@
+.headerToolbar{
+	--background: #ffffff;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:14px
+}
+.categoriesHomeCard{
+	background-color:var(--ion-color-wight);
+    margin: 0px;
+    box-shadow: none;
+    border-radius: 7px;
+}
+.categoriesHomeDiv{
+	padding-top: 5px;
+	text-align:center;
+	width:100%;
+}
+.categoriesHomeSlides{
+    width: 145px;
+    height: 160px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.categoriesHomeLabel{
+    padding-bottom: 15px;
+	text-align:center;
+	font-size:15px;
+	color:#494949;
+}
+.categoriesHomeImage{
+	width:55%; 
+	margin:auto
+}
+.skeletonCategoriesHome{
+	width:75%; 
+	height:60px;
+	margin:auto;
+}
+.skeletonCategoriesHomeText{
+    width: 70%;
+    height: 12px;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+.categoriesskeletonHomeDiv{
+    padding-top: 25px;
+    text-align: center;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.categoriesskeletonHomeLabel{
+    padding-bottom: 15px;
+	padding-top: 15px;
+	text-align:center;
+	font-size:15px;
+	color:#494949;
+}
+.card{
+	width:100px;
+	height:100px;
+	margin: 0px;
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+}
+/*menu style*/
+.footerToolbar{
+--background: #ffffff;
+--border-width:0px;
+--padding-top:7px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#494949;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 13px !important;
+    margin-bottom: 9px;
+	font-weight: 600;
+}
+ion-badge{
+    --background: #F9475C;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 6px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/

@@ -1,0 +1,60 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" menuId="first"  type="overlay" side="end" class="my-custom-menu">
+      <ion-content>
+        <ion-list id="labels-list">
+          <ion-list-header>
+          <div style="height: 100px;margin-top: 70px;width:100%;text-align:center">
+          	<img slot="end" src="../../assets/imgs/Group.png" style="width: 125px" >
+          </div>
+          </ion-list-header>
+          	<div style="width:100%;border-bottom:1px solid #BDBDBD"></div>
+           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPagesfirst; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none"  class="menuListItem" detail="false" routerLinkActive="selected">
+              <ion-label>{{ p.title }}</ion-label>
+              <img slot="end" src="../../assets/imgs/Group774.png" style="width: 25px;max-width:25px" >
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <div style="width:100%;margin-top:50px; text-align:center">
+            <img src="../../assets/imgs/Instagram_white.png" style="width: 40px;max-width:40px" >
+            <img src="../../assets/imgs/Youtube_white.png" style="width: 40px;max-width:40px; margin-right:10px" >
+        	<img src="../../assets/imgs/Facebook_white.png" style="width: 40px;max-width:40px; margin-right:10px" >
+        </div>
+        <div style="width:100%;margin-top:5px; text-align:center;font-size: 21px;">
+            areeb.jo
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-menu contentId="main-content" menuId="last"  type="overlay" side="end">
+      <ion-content>
+        <ion-list id="labels-list">
+          <ion-list-header>
+         <div style="height: 100px;margin-top: 70px;width:100%;text-align:center">
+          	<img slot="end" src="../../assets/imgs/Group.png" style="width: 125px" >
+          </div>
+          </ion-list-header>
+           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPagesLast; let i = index">
+            <ion-item *ngIf="i != 6" routerDirection="root" [routerLink]="[p.url]" lines="none"  class="menuListItem" detail="false" routerLinkActive="selected">
+              <ion-label>{{ p.title }}</ion-label>
+              <img slot="end" src="../../assets/imgs/Group774.png" style="width: 25px;max-width:25px" >
+            </ion-item>
+            <ion-item *ngIf="i == 6" lines="none" (click)="signOut()"  class="menuListItem" >
+              <ion-label>{{ p.title }}</ion-label>
+              <img slot="end" src="../../assets/imgs/Group774.png" style="width: 25px;max-width:25px" >
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <div style="width:100%;margin-top:50px; text-align:center">
+            <img src="../../assets/imgs/Instagram_white.png" style="width: 40px;max-width:40px" >
+            <img src="../../assets/imgs/Youtube_white.png" style="width: 40px;max-width:40px; margin-right:10px" >
+        	<img src="../../assets/imgs/Facebook_white.png" style="width: 40px;max-width:40px; margin-right:10px" >
+        </div>
+        <div style="width:100%;margin-top:5px; text-align:center;font-size: 21px;">
+            areeb.jo
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content" dir="rtl"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

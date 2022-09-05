@@ -1,0 +1,157 @@
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-end:35px;
+	--padding-start:35px;
+	--padding-bottom:10px
+}
+/*comtent*/
+.firstTitle{
+	padding-top:25px; 
+	text-align:center;
+	color:#494949;	
+}
+.lastTitle{
+	padding-top:5px; 
+	text-align:center;
+	color:#494949;
+	padding-bottom:10px
+}
+ion-item{
+	--background:var(--ion-color-inputFormColor);
+	background-color:#ffffff;
+   --ion-background-color:var(--ion-color-inputFormColor);
+   --inner-padding-start:0px;
+   border-radius:10px;
+   --border-radius:10px;
+   --padding-bottom:3px;
+}
+.errorFiled{
+	 border:1px solid red;
+}
+.succsessFiled{
+	 border:1px solid green;
+}
+.class962{
+	color:var(--ion-color-formPlaseHolderColor);
+	direction:ltr;
+	padding-top:11px;
+}
+ion-input{
+		--placeholder-color:var(--ion-color-formPlaseHolderColor);
+	--placeholder-opacity:1;
+	--padding-top:18px;
+	color:var(--ion-color-formPlaseHolderColor);
+	font-size:15px;
+}
+.forgetPassword{
+	font-size: 15px;
+	padding-right:10px;
+	color:#F9475C;
+}
+.errorTitle{
+	color: red;
+    font-size: 14px;
+    margin-right: 9px;
+}
+.oneButton{
+	--background: #F9475C !important;
+	--color:#ffffff !important;
+	--border-radius: 30px;
+	--padding:0px;
+	height:50px;
+	width:100%;
+}
+.oneButton.activated{
+	--background: #F9475C !important;
+	padding:0px;
+}
+.divButtonClass{
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.eye{
+	font-size: 22px;
+    padding-top: 6px;
+	color:var(--ion-color-formPlaseHolderColor);
+}
+.divButtonClassIcon{
+	text-align:center;
+	padding-top:25px;
+	direction:ltr
+}
+.divButtonClassIconAppel{
+	text-align:center;
+	padding-top:10px;
+	direction:ltr
+}
+.iconClassFaceBook{
+	font-size:35px;
+	padding-right:10px;
+	color:#3b5998;
+}
+.spanClassFaceBookFater{
+	padding:18px 10px 6px 10px; 
+	background-color:#ffffff;
+	 border-radius:25px
+}
+.spanClassFaceBookchiled{
+	vertical-align: super;
+	padding-left:5px; 
+	font-weight:bold
+}
+.iconClassGoogle{
+	font-size:35px;
+	padding-left:10px;
+	padding-right:10px;
+	color:#DB4437;
+}
+.spanClassGoogleFater{
+	margin-left:20px;
+	padding:18px 10px 6px 10px; 
+	background-color:#ffffff; 
+	border-radius:25px
+}
+.iconClassAppel{
+	font-size:35px;
+	padding-left:10px;
+	color:#494949;
+}
+/*menu style*/
+.footerToolbar{
+--background: #ffffff;
+--border-width:0px;
+--padding-top:7px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#494949;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 13px !important;
+    margin-bottom: 9px;
+	font-weight: 600;
+}
+ion-badge{
+    --background: #F9475C;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 6px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/
+
+

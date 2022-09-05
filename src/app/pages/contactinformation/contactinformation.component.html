@@ -1,0 +1,42 @@
+<ion-content>
+    <div (click)="closeModel()">
+   		<ion-icon name="close" style="font-size:40px"></ion-icon>
+    </div>
+    <div class="contentDiv">
+ 	<div class="subContentDiv">
+        <div class="divTitle">معلومات التوصيل</div>
+        <form style="display: contents;" (ngSubmit)="saveAndBack()">
+        <div class="paddingBottom">
+            <ion-item lines="none">
+                <ion-input type="number" [(ngModel)]="number" [ngModelOptions]="{standalone: true}" placeholder="رقم الجوال"></ion-input><span class="class962">+962</span>
+            </ion-item>
+        </div> 
+        <div class="paddingBottom">
+            <ion-item lines="none">
+                <ion-input type="number" [(ngModel)]="numberBackUp" [ngModelOptions]="{standalone: true}" placeholder="الجوال الاحتياطي (إختياري)"></ion-input><span class="class962">+962</span>
+            </ion-item>
+        </div> 
+        <div class="map-wrapper" >
+            <div id="map_center">
+            <img src="../../assets/imgs/location-marker.png" />
+            </div>
+        	<div #map id="map"></div>
+        </div>
+        <div class="paddingBottom">
+            <div  class="locationInformation">العنوان {{address}}</div>
+        </div>
+        <div class="paddingBottom">
+            <ion-item lines="none">
+                <ion-textarea rows="5" [(ngModel)]="msg" [ngModelOptions]="{standalone: true}" placeholder="نص الملاحظة (إختياري)" ></ion-textarea>
+            </ion-item>
+        </div>
+        <div>
+           <div class="divButtonClass">
+            <ion-button class="oneButton fontSize18 fontweight1" id="submit" (click)="saveAndBack()"><span style="font-size:13px;padding-top:4px">إضافة</span></ion-button>
+          </div>
+        </div>
+        <button style="visibility:hidden" id="submit" ion-button type="submit" ></button>
+        </form>
+    </div>
+ </div>
+</ion-content>

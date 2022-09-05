@@ -1,0 +1,560 @@
+.headerToolbar{
+	--background: #ffffff;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-start: 25px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-end:15px;
+	--padding-start:15px;
+	--padding-bottom:14px
+}
+ion-item{
+	--background:var(--ion-color-inputFormColor);
+	background-color:#ffffff;
+   --ion-background-color:var(--ion-color-inputFormColor);
+   --inner-padding-start:0px;
+   border-radius:10px;
+   --border-radius:10px;
+   --padding-bottom:3px;
+}
+ion-input{
+		--placeholder-color:var(--ion-color-formPlaseHolderColor);
+	--placeholder-opacity:1;
+	--padding-top:18px;
+	color:var(--ion-color-formPlaseHolderColor);
+	font-size:15px;
+}
+.search{
+	width:27px;
+	height:27px
+}
+.catHomeLabel{
+	padding-top:10%;
+	font-size: calc(11px + 6 * ((100vw - 320px) / 680));
+	text-align:center;
+	color:#494949;
+}
+.catHomeCard{
+	background-color:var(--ion-color-wight);
+	margin: 4px;
+	border-radius: 7px;
+	box-shadow:none;	
+}
+.catHomeCardDiv{
+	width:25%;float:right;text-align:center;
+}
+.catHomeDiv{
+	padding-top: 10px;
+	padding-bottom: 8px;
+	text-align:center;
+	width:100%;
+}
+.catHomeSubDiv{
+	padding-top: 10px;
+	text-align:center;
+	width:100%;
+}
+.catHomeImage{
+	width: 65%;
+	margin:auto
+}
+.catHomeSubImage{
+	width: 60%;
+	margin:auto;
+	border-radius:100%;
+}
+.skeletonCatHomeImage{
+	width: 75%;
+	margin:auto;
+	    padding-bottom: 30%;	
+}
+.skeletonSubCatHomeImage{
+	width: 65%;
+	margin:auto;
+	padding-bottom: 52%;
+	border-radius:100%;
+}
+.bannersHomeImage{
+	width:100%;
+	height:auto; 
+	margin:auto;
+	border-radius:5px;
+}
+.bannersHomeImageSkeleton{
+	width:20%;
+	height:auto; 
+	margin:auto
+}
+.poxProductOrdersTitle{
+	float:right; 
+	font-size:15px; 
+	font-weight:600; 
+	color:#494949
+}
+.poxProductOrdersImageDiv{ 
+	float:left; 
+	font-size:15px; 
+	padding-left:10px
+}
+.poxProductOrdersCount{
+	float:left;
+	color:#BDBDBD;
+	background-color:#F7F7F7;
+	border-radius:15px;
+	margin-left:10px;
+}
+.storesHomeProductCard{
+	background-color:var(--ion-color-wight);
+    width: 190px;
+    height: 250px;
+	margin: 0px;
+	border-radius:5px;
+	box-shadow:none;
+}
+.specialContentProductImage{
+	width: 120px;
+}
+.storesHomeProductSlides{
+	width:190px;
+	height:270px;
+	margin-left:2px;
+	margin-right:7px;
+}
+.textHomeProduct{
+	font-size:14px;
+	padding-top:13px;
+	color:#BDBDBD;
+	text-align: right;
+    padding-right: 16px;
+	height: 30px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.textHomeLabelProduct{
+	font-size:13px;
+	font-weight:600;
+	padding-top:9px;
+	color:#494949;
+	text-align: right;
+    padding-right: 16px;
+	height: 23px;
+	position:absolute;
+	width:75%
+}
+.skeletonlContentImage{
+	margin-top:0px;
+	height:105px
+}
+.skeletonlContentProductImage{
+    width: 107px;
+    height: 116px;
+    margin-top: 25px;
+    margin-right: 43px;
+    margin-bottom: 29px;
+}
+.skeletonTextHomeProductLabel{
+	width:85%;
+}
+.skeletonTextHomeProductPrice{
+	width:50%;
+}
+.skeletonTextHomeProduct{
+    padding-top: 13px;
+    text-align: right;
+    padding-right: 24px;
+    height: 12px;
+}
+.skeletonTextHomeLabelProduct{
+    padding-top: 23px;
+    padding-right: 24px;
+    text-align: right;
+    height: 15px;
+}
+.rowClass{
+	float:left; 
+	padding-left:15px; 
+	margin-top:3px
+}
+.catHomeTitleLabel{
+	font-size:16px;
+	color:#494949;
+	font-weight:600;
+	padding-top:10px;
+}
+.catHomeMoreLabel{
+	font-size:13px;
+}
+.arrowBack{
+	color:#F9475C;
+}
+.categoriesHomeCard{
+	background-color:var(--ion-color-wight);
+	width: 110px;
+    height: 110px;
+    margin: 0px;
+    box-shadow:none;
+    border-radius: 100%;
+}
+.categoriesHomeDiv{
+	padding-top: 30px;
+	text-align:center;
+	width:100%;
+}
+.categoriesHomeDivskeleton{
+	padding-top: 18px;
+	text-align:center;
+	width:100%;
+}
+.categoriesHomeLabel{
+	padding-top:6px;
+	font-size:15px;
+	color:#494949;
+}
+.categoriesHomeImage{
+	width:50px;
+	height:50px; 
+	margin:auto
+}
+.categoriesHomeSlides{
+    width: 118px;
+    height: 135px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.skeletonCategoriesHome{
+    width: 56px;
+    height: 56px;
+    margin: auto;
+    margin-top: 9px;
+    border-radius: 70%;
+}
+.skeletonCategoriesHomeText{
+	width:85px;
+	margin:auto;
+	margin-top: 8px;
+	height:12px;
+}
+.titleCategoriesHome {
+	width: 90px;
+    margin: 1px auto;
+    background-color: #ffffff;
+    padding: 6px 13px;
+    border-radius: 10px;
+    margin-left: 12px;
+}
+.imageCategoriesHome {
+	padding-bottom: 0px;
+    font-size: 16px;
+	 float: right;
+	 color:#494949;
+	 padding-top:6px
+}
+.foreStoreHomeDivImage{
+	text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+}
+.foreStoreImage{
+	padding:25px;
+}
+.foreStoreHomeCard{
+	background-color:var(--ion-color-wight);
+    width: 100%;
+    height: 100%;
+    position: initial;
+    margin: 0px;
+    border-radius: 10px;
+    box-shadow:none;
+    border-radius: 10px;
+}
+.skeletonlForHeaderImage{
+	width: 30%;
+    height: auto;
+    margin: auto;
+    top: 0px;
+    border-radius: 100%;
+}
+.skeletonlForContentImage{
+    height:100px
+}
+.skeletonTextHomeLabel{
+	height:14px
+}
+
+.skeletonTextSubHomeLabel{
+	width:65%;
+	margin-right:17%;
+	margin-top:10px
+}
+.forestoresHomeSlides{
+	width:100%;
+	height:100%;
+	padding-bottom: 7%;
+}
+.foreStoretextHomeName{
+	font-size:14px;
+	padding-top:15px;
+	color:#494949;
+	text-align: right;
+    padding-right: 16px;
+	height: 32px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.foreStoretextHomeLabel{
+	font-size:11px;
+	padding-top:4px;
+	color:#BDBDBD;
+	text-align: right;
+    padding-right: 16px;
+	height: 20px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+	float:right;
+    overflow: hidden;
+	width:70%
+}
+.lockImage{
+	position:absolute;
+	left:0px;
+	z-index:100;
+	width:30px;
+	top:35px; 
+	right:75px
+}
+.lockImageLarg{
+	position: absolute;
+    width: 15%;
+    padding-top: 35%;
+}
+.textHomeLabel{
+	font-size:13px;
+	padding-top:11px;
+	color:#818181;
+	text-align: right;
+    padding-right: 13px;
+	height: 23px;
+}
+.offersHomeImage{
+	width:100%;
+	height:auto; 
+	margin:auto;
+	border-radius:5px;
+}
+.offersHomeImageSkeleton{
+	width:20%;
+	height:auto; 
+	margin:auto
+}
+.offersHome{
+	position: relative
+}
+.offersHomeContent{
+	position: absolute;
+	font-size:5vw;
+	color:#ffffff;
+	top:5%;
+	text-align: center;
+	width: 100%;
+}
+.storesHomeCard{
+	background-color:var(--ion-color-wight);
+	width: 200px;
+    height: 290px;
+	margin: 0px;
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+}
+.storesHomeSlides{
+	width:210px;
+	margin-left:2px;
+	margin-right:2px;
+    padding-top:9px;
+}
+.specialContentImage{
+	padding:25px
+}
+.storetextHomeName{
+	font-size:14px;
+	padding-top:10px;
+	color:#494949;
+	text-align: right;
+    padding-right: 16px;
+	height: 23px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.storetextHomeLabel{
+	font-size:11px;
+	padding-top:4px;
+	color:#BDBDBD;
+	text-align: right;
+    padding-right: 16px;
+	height: 20px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+	float:right;
+    overflow: hidden;
+	width:75%
+}
+.storetextHomeLabelTow{
+	font-size:11px;
+	color:#BDBDBD;
+	text-align: right;
+    padding-right: 16px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+	float:right;
+    overflow: hidden;
+	width:75%
+}
+.skeletonlHomeContentImage{
+    height:130px
+}
+.lockImageHome{
+	position: absolute;
+    left: 0px;
+    z-index: 100;
+    width: 30px;
+    top: 75px;
+    right: 90px;
+}
+.productInStoreCard{
+	background-color:var(--ion-color-wight);
+    width: 100%;
+    height: 100%;
+    position: initial;
+    margin: 0px;
+    border-radius: 10px;
+    box-shadow:none;
+    border-radius: 10px;
+}
+.productInStoreSlides{
+	width:100%;
+	height:100%;
+	padding-bottom: 7%;
+}
+.productInStoreImage{
+	padding:25px;
+}
+
+.storesSubCatCard{
+	background-color:var(--ion-color-wight);
+	width: 200px;
+    height: 260px;
+	margin: 0px;
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+}
+.storesSubCatSlides{
+	width:210px;
+	margin-left:2px;
+	margin-right:2px;
+    padding-top:9px;
+}
+.specialSubCatImage{
+	padding:25px
+}
+.storetextSubCatName{
+	font-size:14px;
+	padding-top:13px;
+	color:#494949;
+	text-align: center;
+	height: 30px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-height: 16px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.textHomeSubCatLabel{
+	font-size:13px;
+	padding-top:14px;
+	color:#818181;
+	text-align: right;
+    padding-right: 13px;
+	height: 23px;
+}
+.card{
+	width:100px;
+	height:100px;
+	margin: 0px;
+	border-radius:10px;
+	box-shadow:none;
+	border-radius: 10px;
+}
+/*menu style*/
+.footerToolbar{
+--background: #ffffff;
+--border-width:0px;
+--padding-top:7px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#494949;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 13px !important;
+    margin-bottom: 9px;
+	font-weight: 600;
+}
+ion-badge{
+    --background: #F9475C;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 6px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/
+
+
